@@ -1,0 +1,47 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the Cycleplan Umbraco Content Delivery API
+  version: 1.0.0
+x-apievangelist:
+  generated: '2026-07-25'
+  method: generated
+  source: openapi/ripe-insurance-cycleplan-content-delivery-openapi.json
+  note: >-
+    Cycleplan is a Ripe Insurance brand. Its Umbraco build is one version behind the
+    flagship site, so it still exposes the eight legacy v1 operations alongside the
+    eight v2 ones — sixteen in total against eight on ripeinsurance.co.uk. This overlay
+    records the production server, the provenance, and the v1 deprecation reality the
+    vendor specification does not state.
+extends: openapi/ripe-insurance-cycleplan-content-delivery-openapi.json
+actions:
+- target: $.info
+  update:
+    title: Cycleplan Umbraco Content Delivery API
+    x-apievangelist-provider: ripe-insurance
+    x-apievangelist-brand: Cycleplan
+    x-apievangelist-harvested: '2026-07-25'
+    x-apievangelist-source: https://www.cycleplan.co.uk/umbraco/swagger/delivery/swagger.json
+    x-apievangelist-classification: cms-content-infrastructure
+    x-apievangelist-note: >-
+      Read-only content and media for the Cycleplan bike-insurance brand. Not an
+      insurance API. Cycleplan is also the brand behind Ripe's April 2026 ChatGPT app,
+      but that conversational quote surface is private and unrelated to this API.
+- target: $.externalDocs
+  update:
+    description: Umbraco Content Delivery API reference (platform vendor documentation)
+    url: https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api
+- target: $.servers
+  update:
+  - url: https://www.cycleplan.co.uk
+    description: Cycleplan production site (verified live, anonymous, 2026-07-25)
+- target: $.paths['/umbraco/delivery/api/v1/content'].get
+  update:
+    deprecated: true
+    x-apievangelist-note: >-
+      v1 is superseded by v2 and has already been withdrawn on www.ripeinsurance.co.uk
+      (returns 400). No Sunset or Deprecation header is emitted and no notice was
+      published — see lifecycle/ripe-insurance-lifecycle.yml.
+- target: $.paths['/umbraco/delivery/api/v1/media'].get
+  update:
+    deprecated: true
+    x-apievangelist-note: Superseded by /umbraco/delivery/api/v2/media.

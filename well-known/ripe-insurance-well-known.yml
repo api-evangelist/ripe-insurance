@@ -1,0 +1,101 @@
+generated: '2026-07-25'
+method: searched
+source: live probes of the Ripe brand estate /.well-known/ surface, 2026-07-25
+note: >-
+  Ripe Insurance publishes no security.txt, no api-catalog, no ai-plugin.json and no
+  RFC 8414 OAuth authorization-server metadata. The one real discovery document across
+  the estate is the OpenID Connect configuration emitted by the Umbraco (OpenIddict)
+  member-authentication server that fronts the website customer login — it is not a
+  developer or partner authorization server. The same document is published on the
+  Cycleplan, Golf Care and Insure4Sport brand sites; ripeinsurance.co.uk is recorded as
+  the canonical copy. Every status below was observed on 2026-07-25.
+hosts:
+- host: https://www.ripeinsurance.co.uk
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: ripe-insurance-openid-configuration.json
+    kind: oidc-discovery
+  - path: /.well-known/jwks
+    status: 200
+    file: ripe-insurance-jwks.json
+    kind: jwks
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /security.txt
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /llms.txt
+    status: 200
+    bytes: 0
+    kind: llms-txt
+    note: >-
+      Served with 200 and content-type text/plain but ZERO bytes — the file is
+      published empty on the primary Ripe Insurance domain. The brand sites publish
+      real ones (see llms/).
+- host: https://www.cycleplan.co.uk
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    kind: oidc-discovery
+    note: Same Umbraco member OIDC server, issuer https://www.cycleplan.co.uk/
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /llms.txt
+    status: 200
+    bytes: 10470
+    file: ../llms/ripe-insurance-cycleplan-llms.txt
+    kind: llms-txt
+- host: https://www.golfcare.co.uk
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    kind: oidc-discovery
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /llms.txt
+    status: 200
+    bytes: 9955
+    file: ../llms/ripe-insurance-golfcare-llms.txt
+    kind: llms-txt
+- host: https://www.insure4sport.co.uk
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    kind: oidc-discovery
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /llms.txt
+    status: 200
+    bytes: 21524
+    file: ../llms/ripe-insurance-insure4sport-llms.txt
+    kind: llms-txt
+- host: https://www.insure4boats.co.uk
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /llms.txt
+    status: 404
+- host: https://www.ripethinking.co.uk
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /llms.txt
+    status: 404
+security_txt:
+  present: false
+  note: >-
+    No RFC 9116 security.txt on any Ripe brand host. No vulnerability-disclosure or
+    bug-bounty page was found either (probed 2026-07-25), so no SecurityTxt, Security
+    or VulnerabilityDisclosure pointer is emitted.

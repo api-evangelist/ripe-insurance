@@ -1,0 +1,110 @@
+generated: '2026-07-25'
+method: derived
+source: >-
+  openapi/ripe-insurance-umbraco-content-delivery-openapi.json,
+  openapi/ripe-insurance-cycleplan-content-delivery-openapi.json
+docs: https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api
+format: rfc7807
+media_type: application/json
+note: >-
+  Derived from the 4xx responses declared in the two harvested Umbraco Content Delivery
+  API specifications. The error body is the ASP.NET Core ProblemDetails object — RFC
+  7807 shaped (type, title, status, detail, instance, plus additionalProperties) but
+  served as application/json rather than application/problem+json, so it does not meet
+  RFC 9457 content-type negotiation. Ripe publishes no error reference of its own; there
+  is no registry of typed error URIs, and the `type` field is nullable. Only the 400
+  responses carry a declared response body — 401, 403 and 404 are declared with no
+  content at all. No insurance error catalog exists because no insurance API exists.
+envelope:
+  schema: ProblemDetails
+  fields:
+  - name: type
+    type: string
+    nullable: true
+    description: URI reference identifying the problem type. Nullable and unregistered.
+  - name: title
+    type: string
+    nullable: true
+  - name: status
+    type: integer
+    nullable: true
+  - name: detail
+    type: string
+    nullable: true
+  - name: instance
+    type: string
+    nullable: true
+  extensible: true
+problems:
+- status: 400
+  title: Bad Request
+  body: ProblemDetails
+  media_type: application/json
+  cause: >-
+    Malformed fetch/filter/sort expression, invalid skip/take values, or an
+    unsupported API version (a v1 path on a host where only v2 is enabled returns 400).
+  remediation: >-
+    Correct the query-expression syntax per the Umbraco query-parameter reference and
+    confirm the version segment (v2) matches the host.
+  source_operations:
+  - openapi/ripe-insurance-umbraco-content-delivery-openapi.json#GetContent2.0
+  - openapi/ripe-insurance-umbraco-content-delivery-openapi.json#GetMedia2.0
+- status: 401
+  title: Unauthorized
+  body: null
+  media_type: null
+  cause: >-
+    The requested content item is member-protected. The caller presented no credential
+    from the Umbraco member OpenID Connect server.
+  remediation: >-
+    Member-protected content requires an authenticated website member session. No
+    developer credential exists for this API; there is nothing an outside integrator
+    can present. See authentication/ripe-insurance-authentication.yml.
+  source_operations:
+  - openapi/ripe-insurance-umbraco-content-delivery-openapi.json#GetContentItemByPath2.0
+  - openapi/ripe-insurance-umbraco-content-delivery-openapi.json#GetContentItemById2.0
+  - openapi/ripe-insurance-umbraco-content-delivery-openapi.json#GetContentItems2.0
+- status: 403
+  title: Forbidden
+  body: null
+  media_type: null
+  cause: >-
+    The caller is authenticated as a member but is not in a member group granted access
+    to the requested item, or requested draft content via the Preview header without
+    authorization.
+  remediation: Request the published item, or an item the member is entitled to.
+  source_operations:
+  - openapi/ripe-insurance-umbraco-content-delivery-openapi.json#GetContentItemByPath2.0
+  - openapi/ripe-insurance-umbraco-content-delivery-openapi.json#GetContentItemById2.0
+  - openapi/ripe-insurance-umbraco-content-delivery-openapi.json#GetContentItems2.0
+- status: 404
+  title: Not Found
+  body: null
+  media_type: null
+  cause: >-
+    No content or media item matches the supplied id or path, or the item is outside
+    the Start-Item root scope.
+  remediation: >-
+    Verify the GUID or URL path, and the Start-Item header if one was supplied. Note
+    that a member-protected item may present as 404 rather than 401 depending on
+    configuration.
+  source_operations:
+  - openapi/ripe-insurance-umbraco-content-delivery-openapi.json#GetContent2.0
+  - openapi/ripe-insurance-umbraco-content-delivery-openapi.json#GetContentItemByPath2.0
+  - openapi/ripe-insurance-umbraco-content-delivery-openapi.json#GetContentItemById2.0
+  - openapi/ripe-insurance-umbraco-content-delivery-openapi.json#GetMediaItemByPath2.0
+  - openapi/ripe-insurance-umbraco-content-delivery-openapi.json#GetMediaItemById2.0
+observed:
+- url: https://www.ripeinsurance.co.uk/api/
+  status: 403
+  date: '2026-07-25'
+  note: A platform 403 wall with no JSON body. Not part of the Delivery API surface.
+- url: https://www.ripeinsurance.co.uk/umbraco/delivery/api/v1/content
+  status: 400
+  date: '2026-07-25'
+  note: v1 is disabled on ripeinsurance.co.uk; it remains enabled on cycleplan.co.uk.
+gaps:
+- No published error-code registry or error reference page authored by Ripe.
+- The `type` field is nullable and no problem-type URIs are minted, so errors are not machine-classifiable beyond HTTP status.
+- 401, 403 and 404 declare no response body, so a client cannot rely on a ProblemDetails payload for those statuses.
+- Error responses are not served as application/problem+json.

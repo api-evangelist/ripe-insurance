@@ -322,3 +322,79 @@ actions:
     mistaken for a quote, bind, issue, or FNOL capability. ACORD posture is a clean
     negative. This is the correct and expected outcome for a UK direct-to-consumer
     digital MGA in a market with no open-insurance mandate.
+enrichment:
+- round: '2026-07-25'
+  pipeline: 0-working/pipeline-enrich.md
+  summary: >-
+    Second pass. The "no developer surface" verdict stands unchanged, but three real
+    finds were added. (1) Three Ripe brands publish genuine llms.txt documents —
+    cycleplan.co.uk (10,470 bytes), golfcare.co.uk (9,955) and insure4sport.co.uk
+    (21,524) — curated, annotated link maps written for AI agents. This is the estate's
+    real agent-facing investment, and it is not an API. The flagship
+    www.ripeinsurance.co.uk/llms.txt returns 200 with ZERO bytes: published empty.
+    (2) A second OpenAPI was harvested from cycleplan.co.uk — the same Umbraco Content
+    Delivery API one CMS version behind, so it still exposes the eight legacy v1
+    operations alongside the eight v2 ones (16 total vs 8 on the flagship). v1 already
+    returns 400 on ripeinsurance.co.uk, an unannounced withdrawal with no Sunset header.
+    (3) Two real GitHub organizations exist — github.com/RipeThinking (created
+    2023-03-14, "Ripe Thinking scripts and programs created by Daniel Windsor",
+    blog ripethinking.co.uk) and github.com/ripeinsurance (created 2024-11-28) — both
+    with ZERO public repositories.
+  probes:
+  - {url: 'https://www.ripeinsurance.co.uk/llms.txt', status: 200, bytes: 0, note: published but empty}
+  - {url: 'https://www.cycleplan.co.uk/llms.txt', status: 200, bytes: 10470}
+  - {url: 'https://www.golfcare.co.uk/llms.txt', status: 200, bytes: 9955}
+  - {url: 'https://www.insure4sport.co.uk/llms.txt', status: 200, bytes: 21524}
+  - {url: 'https://www.insure4boats.co.uk/llms.txt', status: 404}
+  - {url: 'https://www.ripethinking.co.uk/llms.txt', status: 404}
+  - {url: 'https://www.ripeinsurance.co.uk/.well-known/security.txt', status: 404}
+  - {url: 'https://www.ripeinsurance.co.uk/.well-known/oauth-authorization-server', status: 404}
+  - {url: 'https://www.ripeinsurance.co.uk/.well-known/oauth-protected-resource', status: 404}
+  - {url: 'https://www.ripeinsurance.co.uk/.well-known/api-catalog', status: 404}
+  - {url: 'https://www.ripeinsurance.co.uk/.well-known/ai-plugin.json', status: 404}
+  - {url: 'https://www.ripeinsurance.co.uk/.well-known/jwks', status: 200, note: RSA signing key for the member OIDC server}
+  - {url: 'https://mcp.ripeinsurance.co.uk/', status: 000, note: host does not resolve}
+  - {url: 'https://mcp.cycleplan.co.uk/', status: 000, note: host does not resolve}
+  - {url: 'https://www.cycleplan.co.uk/mcp', status: 404}
+  - {url: 'https://www.cycleplan.co.uk/.well-known/mcp.json', status: 404}
+  - {url: 'https://registry.modelcontextprotocol.io/v0/servers?search=cycleplan', status: 200, note: 0 servers}
+  - {url: 'https://www.cycleplan.co.uk/umbraco/swagger/delivery/swagger.json', status: 200, note: 'OpenAPI 3.0.1, 16 operations. Harvested.'}
+  - {url: 'https://status.ripeinsurance.co.uk/', status: 000, note: host does not resolve}
+  - {url: 'https://ripeinsurance.statuspage.io/', status: 200, note: 'Atlassian marketing page, NOT a Ripe status page. Not recorded.'}
+  - {url: 'https://www.ripeinsurance.co.uk/login', status: 200, note: redirects to account.ripeinsurance.co.uk, the customer account portal}
+  - {url: 'https://api.github.com/orgs/RipeThinking', status: 200, note: 0 public repositories}
+  - {url: 'https://api.github.com/users/ripeinsurance', status: 200, note: organization, 0 public repositories}
+  - {url: 'https://www.postman.com search "ripe insurance"', status: 200, note: 0 collections, workspaces or APIs}
+  negatives_confirmed:
+  - No security.txt, no vulnerability-disclosure page, no bug bounty on any brand host.
+  - No trust centre and no published certifications (SOC 2, ISO 27001, PCI DSS).
+  - No MCP server, no GraphQL, no gRPC, no AsyncAPI, no webhooks.
+  - No API changelog, deprecation policy, SLA, status page or roadmap.
+  - No client library in npm, PyPI, NuGet or RubyGems. The npm "ripe-*" packages belong to ripe-tech and the RIPE NCC, not to Ripe Insurance.
+  - No sandbox, no CLI, no embedded components, no Postman collection.
+  artifacts_added:
+  - openapi/ripe-insurance-cycleplan-content-delivery-openapi.json
+  - llms/ripe-insurance-llms.txt
+  - llms/ripe-insurance-cycleplan-llms.txt
+  - llms/ripe-insurance-golfcare-llms.txt
+  - llms/ripe-insurance-insure4sport-llms.txt
+  - well-known/ripe-insurance-well-known.yml
+  - well-known/ripe-insurance-openid-configuration.json
+  - well-known/ripe-insurance-jwks.json
+  - authentication/ripe-insurance-authentication.yml
+  - scopes/ripe-insurance-scopes.yml
+  - conventions/ripe-insurance-conventions.yml
+  - conformance/ripe-insurance-conformance.yml
+  - errors/ripe-insurance-problem-types.yml
+  - lifecycle/ripe-insurance-lifecycle.yml
+  - data-model/ripe-insurance-data-model.yml
+  - packages/ripe-insurance-packages.yml
+  - mcp/ripe-insurance-mcp.yml
+  - mcp/ripe-insurance-tool-crosswalk.yml
+  - overlays/ripe-insurance-umbraco-content-delivery-overlay.yaml
+  - overlays/ripe-insurance-cycleplan-content-delivery-overlay.yaml
+  - skills/_index.yml
+  - skills/ripe-insurance-read-brand-content.md
+  - skills/ripe-insurance-read-brand-media.md
+  - security/ripe-insurance-domain-security.yml
+  - agentic-access/ripe-insurance-agentic-access.yml

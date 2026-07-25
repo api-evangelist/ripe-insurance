@@ -1,0 +1,89 @@
+generated: '2026-07-25'
+method: searched
+source: >-
+  live probes 2026-07-25 of ripeinsurance.co.uk, ripethinking.co.uk and the brand
+  estate; openapi/ripe-insurance-umbraco-content-delivery-openapi.json;
+  openapi/ripe-insurance-cycleplan-content-delivery-openapi.json
+summary: >-
+  Ripe Insurance operates no API lifecycle programme. There is no API changelog, no
+  release notes, no deprecation policy, no SLA, no public status page and no roadmap —
+  consistent with a provider that does not offer an API as a product. The only
+  versioning that exists is the URI-path version segment the Umbraco CMS emits, and the
+  only observable lifecycle event is that v1 has been retired on ripeinsurance.co.uk
+  while it is still live on cycleplan.co.uk, golfcare.co.uk and insure4sport.co.uk —
+  an unannounced, undocumented, per-host divergence.
+versioning:
+  scheme: uri-path
+  current: v2
+  legacy: v1
+  pattern: /umbraco/delivery/api/{version}/...
+  docs: https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api
+  provider_policy: false
+  note: >-
+    Version discipline belongs to the Umbraco platform, not to Ripe. The `info.version`
+    field in both specifications is the literal string "Latest", so the contract carries
+    no resolvable version identifier at all.
+version_skew:
+- host: https://www.ripeinsurance.co.uk
+  spec_version: OpenAPI 3.0.4
+  api_versions: [v2]
+  operations: 8
+  v1_status: 400 (retired)
+- host: https://www.cycleplan.co.uk
+  spec_version: OpenAPI 3.0.1
+  api_versions: [v1, v2]
+  operations: 16
+- host: https://www.golfcare.co.uk
+  api_versions: [v1, v2]
+  operations: 16
+- host: https://www.insure4sport.co.uk
+  api_versions: [v1, v2]
+  operations: 16
+- host: https://www.insure4boats.co.uk
+  api_versions: []
+  note: Delivery API not enabled (404).
+deprecation:
+  policy_url: null
+  policy_published: false
+  sunset_header: false
+  deprecation_header: false
+  rfc8594: false
+  note: >-
+    No deprecation policy, no Sunset or Deprecation header support, and no advance
+    notice mechanism. v1 was removed from the primary host without any published
+    notice. No `Deprecation` pointer is emitted — there is no policy to point at.
+deprecated_operations: []
+sla:
+  url: null
+  uptime_target: null
+  published: false
+status_page:
+  url: null
+  published: false
+  probed:
+  - {url: 'https://status.ripeinsurance.co.uk/', status: 000, note: host does not resolve}
+  - {url: 'https://ripeinsurance.statuspage.io/', status: 200, note: 'Atlassian Statuspage marketing page, NOT a Ripe status page — title "Improve Transparency with Statuspage | Atlassian". Not recorded.'}
+  note: >-
+    No status page exists on any Ripe brand host. No `StatusPage` pointer is emitted.
+changelog:
+  url: null
+  published: false
+  note: >-
+    No API changelog or release notes. The company publishes corporate news at
+    https://www.ripethinking.co.uk/news/ — announcements (Aquiline investment, the
+    Schofields acquisition, the April 2026 Cycleplan ChatGPT app), not API change
+    records. No `ChangeLog` pointer is emitted.
+roadmap:
+  url: null
+  published: false
+support:
+  url: https://www.ripeinsurance.co.uk/help-and-support/
+  channel: consumer help centre and per-brand claims lines
+  developer_support: false
+platform_dependency:
+  vendor: Umbraco CMS
+  upstream_lifecycle: https://umbraco.com/products/knowledge-center/long-term-support-and-eol/
+  note: >-
+    Because the only public API is CMS boilerplate, its lifecycle is governed entirely
+    by Ripe's Umbraco upgrade cadence. A CMS upgrade can add or remove operations on any
+    brand host with no notice to any consumer — exactly what the v1/v2 skew above shows.

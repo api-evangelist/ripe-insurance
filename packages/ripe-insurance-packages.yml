@@ -1,0 +1,31 @@
+generated: '2026-07-25'
+method: searched
+source: registry searches performed 2026-07-25
+packages: []
+official_sdk_count: 0
+note: >-
+  Ripe Insurance publishes NO client libraries in any public package registry, and no
+  SDK, CLI or SourceCode link exists anywhere in apis.yml to derive candidates from.
+  This is expected: there is no public API to build an SDK against. No `SDKs` pointer is
+  emitted.
+registries_searched:
+- {registry: npm, query: 'ripe insurance', results: 0 first-party}
+- {registry: npm, query: cycleplan, results: 0}
+- {registry: pypi, query: ripe-insurance, status: 404}
+- {registry: pypi, query: ripeinsurance, status: 404}
+- {registry: pypi, query: cycleplan, status: 404}
+- {registry: nuget, query: ripeinsurance, totalHits: 0}
+- {registry: rubygems, query: 'ripe insurance', results: 0}
+- {registry: postman, query: 'ripe insurance', results: 0 across collections/workspaces/APIs}
+homonym_warning: >-
+  Searching "ripe" in package registries is noisy and every hit belongs to someone else.
+  `ripe-sdk`, `ripe-id-api`, `ripe-commons-pluginus` and `ripe-components-vue` are
+  published by ripe-tech (Platforme's RIPE Core product-customisation platform).
+  `ripe-atlas-mcp-server` belongs to the RIPE NCC Atlas measurement network.
+  `ripe-skills` is an unrelated front-end architecture. NONE of these are Ripe Insurance
+  Services Limited. Do not attribute them to this provider.
+platform_dependency:
+  note: >-
+    The one public API on the estate is Umbraco CMS boilerplate. Umbraco publishes its
+    own .NET client packages on NuGet, but those are the vendor's, not Ripe's, and are
+    not catalogued here.

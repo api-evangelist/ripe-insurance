@@ -1,0 +1,32 @@
+generated: '2026-07-25'
+method: generated
+source: openapi/ripe-insurance-umbraco-content-delivery-openapi.json
+note: >-
+  Two skills, both grounded in operationIds verified verbatim in the harvested
+  specification. They cover the ONLY public API Ripe Insurance exposes — the Umbraco CMS
+  Content Delivery API. There is no quote, bind, issue, policy or FNOL skill because no
+  such operation exists anywhere on the Ripe estate. Do not author one.
+skills:
+- file: ripe-insurance-read-brand-content.md
+  name: Read Ripe brand website content
+  description: >-
+    List, filter, sort, page and fetch published pages from a Ripe brand website, using
+    sparse fields and expansion to retrieve only what is needed.
+  api: openapi/ripe-insurance-umbraco-content-delivery-openapi.json
+  operations: [GetContent2.0, GetContentItemById2.0, GetContentItemByPath2.0, GetContentItems2.0]
+- file: ripe-insurance-read-brand-media.md
+  name: Read Ripe brand media assets
+  description: >-
+    Retrieve media items with their crops, focal points and dimensions from a Ripe brand
+    website.
+  api: openapi/ripe-insurance-umbraco-content-delivery-openapi.json
+  operations: [GetMedia2.0, GetMediaItemById2.0, GetMediaItemByPath2.0, GetMediaItems2.0]
+not_covered:
+- capability: quote
+  reason: No public endpoint. Quoting happens in first-party web funnels and the Cycleplan ChatGPT app.
+- capability: bind / issue / policy / documents
+  reason: No public endpoint. Completed on the brand websites and in the customer login area.
+- capability: fnol / claims
+  reason: No public endpoint. Claims are notified via the how-to-claim page and per-brand claims lines.
+- capability: webhooks / events
+  reason: No event surface of any kind exists on the estate.

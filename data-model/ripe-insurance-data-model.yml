@@ -1,0 +1,92 @@
+generated: '2026-07-25'
+method: derived
+source: >-
+  openapi/ripe-insurance-umbraco-content-delivery-openapi.json,
+  openapi/ripe-insurance-cycleplan-content-delivery-openapi.json
+docs: https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api
+note: >-
+  The entity graph derived from components.schemas $ref links in the two harvested
+  Umbraco Content Delivery API specifications. This is a CONTENT model (pages, media,
+  crops, routes), not an insurance domain model. No Policy, Quote, Risk, Claim,
+  Coverage, Premium or Party entity exists anywhere in Ripe's public surface — the
+  insurance data model is entirely private. Schema names differ between hosts: the
+  3.0.4 spec on ripeinsurance.co.uk uses the `Api*` prefix, the 3.0.1 spec on
+  cycleplan.co.uk uses the `IApi*` interface prefix for the same shapes.
+domain: content-management
+entities:
+- name: ApiContentResponseModel
+  alias_on_cycleplan: IApiContentResponseModel
+  description: A single published content item (a page on a Ripe brand website).
+  identifier: {field: id, type: string, format: uuid}
+  required: [id, contentType, properties, name, createDate, updateDate, route, cultures]
+  fields:
+  - {name: id, type: uuid}
+  - {name: contentType, type: string, note: document-type alias, the closest thing to a class discriminator}
+  - {name: name, type: string}
+  - {name: createDate, type: date-time}
+  - {name: updateDate, type: date-time}
+  - {name: properties, type: object, note: open map, additionalProperties nullable — the actual page payload is untyped}
+  - {name: cultures, type: map<string, ApiContentRouteModel>}
+  - {name: route, type: ApiContentRouteModel}
+  returned_by: [GetContent2.0, GetContentItemById2.0, GetContentItemByPath2.0, GetContentItems2.0]
+- name: ApiContentRouteModel
+  alias_on_cycleplan: IApiContentRouteModel
+  description: The URL route for a content item, per culture.
+  required: [path, startItem]
+  fields:
+  - {name: path, type: string}
+  - {name: queryString, type: string, nullable: true}
+  - {name: startItem, type: ApiContentStartItemModel}
+- name: ApiContentStartItemModel
+  alias_on_cycleplan: IApiContentStartItemModel
+  description: The site root a route is anchored to. Addressable via the Start-Item request header.
+  required: [id, path]
+  fields:
+  - {name: id, type: uuid}
+  - {name: path, type: string}
+- name: ApiMediaWithCropsResponseModel
+  alias_on_cycleplan: IApiMediaWithCropsResponseModel
+  description: A media item (image, document) with its configured crop set.
+  identifier: {field: id, type: string, format: uuid}
+  returned_by: [GetMedia2.0, GetMediaItemById2.0, GetMediaItemByPath2.0, GetMediaItems2.0]
+- name: ImageCropModel
+  description: A named crop definition on a media item.
+  fields:
+  - {name: coordinates, type: ImageCropCoordinatesModel}
+- name: ImageCropCoordinatesModel
+  description: Normalised crop rectangle (x1, y1, x2, y2).
+- name: ImageFocalPointModel
+  description: Normalised focal point (left, top) used when cropping.
+- name: PagedIApiContentResponseModel
+  description: Paged envelope for content collections.
+  fields:
+  - {name: total, type: integer, format: int64}
+  - {name: items, type: array<ApiContentResponseModel>}
+- name: PagedIApiMediaWithCropsResponseModel
+  description: Paged envelope for media collections.
+  fields:
+  - {name: total, type: integer, format: int64}
+  - {name: items, type: array<ApiMediaWithCropsResponseModel>}
+- name: ProblemDetails
+  description: RFC 7807-shaped error object. See errors/ripe-insurance-problem-types.yml.
+relationships:
+- {from: PagedIApiContentResponseModel, to: ApiContentResponseModel, type: has_many, via: items}
+- {from: PagedIApiMediaWithCropsResponseModel, to: ApiMediaWithCropsResponseModel, type: has_many, via: items}
+- {from: ApiContentResponseModel, to: ApiContentRouteModel, type: has_one, via: route}
+- {from: ApiContentResponseModel, to: ApiContentRouteModel, type: has_many, via: cultures, note: keyed by culture code}
+- {from: ApiContentRouteModel, to: ApiContentStartItemModel, type: has_one, via: startItem}
+- {from: ApiMediaWithCropsResponseModel, to: ImageCropModel, type: has_many, via: crops}
+- {from: ApiMediaWithCropsResponseModel, to: ImageFocalPointModel, type: has_one, via: focalPoint}
+- {from: ImageCropModel, to: ImageCropCoordinatesModel, type: has_one, via: coordinates}
+identifiers:
+  scheme: uuid
+  prefixes: []
+  note: >-
+    All entity identifiers are bare GUIDs with no type prefix, so an id carries no
+    indication of what it addresses. Content items are also addressable by URL path.
+insurance_domain:
+  present: false
+  absent_entities: [Policy, Quote, Risk, Claim, Coverage, Premium, Party, Endorsement, Renewal]
+  note: >-
+    Quote, bind, issue and FNOL all happen inside first-party consumer web funnels and,
+    since April 2026, the Cycleplan ChatGPT app. None of that data model is published.

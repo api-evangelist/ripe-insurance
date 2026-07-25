@@ -1,0 +1,146 @@
+generated: '2026-07-25'
+method: derived
+source: >-
+  openapi/ripe-insurance-umbraco-content-delivery-openapi.json,
+  openapi/ripe-insurance-cycleplan-content-delivery-openapi.json,
+  https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api
+docs: https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters
+scope_note: >-
+  These conventions describe the ONLY public API Ripe Insurance exposes — the Umbraco
+  CMS Content Delivery API on its brand websites. They are the conventions of the
+  Umbraco platform, not conventions Ripe authored or documents. There is no insurance
+  API and therefore no insurance API convention set.
+authentication:
+  style: anonymous
+  optional_header: Api-Key
+  member_auth: openIdConnect
+  detail: authentication/ripe-insurance-authentication.yml
+transport:
+  protocol: REST
+  scheme: https
+  base_paths:
+  - https://www.ripeinsurance.co.uk/umbraco/delivery/api/v2
+  - https://www.cycleplan.co.uk/umbraco/delivery/api/v2
+  methods: [GET]
+  write_operations: false
+  content_type: application/json
+idempotency:
+  supported: false
+  header: null
+  note: >-
+    No idempotency contract exists and none is needed — every operation across both
+    specifications is a GET. There are zero write operations, so no Idempotency-Key
+    header, no request replay window and no retention policy. No `Idempotency` pointer
+    is emitted for this provider; doing so would misrepresent a read-only surface.
+  safe_retry: >-
+    All operations are safe and idempotent by HTTP method semantics (RFC 9110 §9.2.1);
+    plain retry with backoff is correct.
+pagination:
+  style: offset
+  params:
+  - name: skip
+    in: query
+    type: integer
+    description: Number of found items to skip.
+  - name: take
+    in: query
+    type: integer
+    description: Number of found items to take.
+  response_fields:
+  - total
+  - items
+  response_schema: PagedIApiContentResponseModel / PagedIApiMediaWithCropsResponseModel
+  cursor: false
+  link_header: false
+  applies_to: [GetContent2.0, GetMedia2.0]
+  note: >-
+    Only the collection operations paginate. The multi-fetch operations
+    (GetContentItems2.0, GetMediaItems2.0) take an explicit `id` array instead and
+    return an unpaged array.
+filtering_and_sorting:
+  fetch:
+    param: fetch
+    description: >-
+      Selects the item set relative to a node — ancestors:id, ancestors:path,
+      children:id, children:path, descendants:id, descendants:path, or empty for all.
+  filter:
+    param: filter
+    type: array
+    description: >-
+      Repeatable filter expressions, e.g. contentType:alias1, name:nodeName,
+      createDate<2024-01-01, updateDate>:2023-01-01.
+    examples_published: ['contentType:alias1', 'name:nodeName', 'createDate<2024-01-01', 'updateDate>:2023-01-01']
+  sort:
+    param: sort
+    type: array
+    description: >-
+      Repeatable sort expressions. The specification publishes exactly four sortable
+      fields, ascending or descending.
+    examples_published: ['createDate:asc', 'createDate:desc', 'updateDate:asc', 'updateDate:desc', 'name:asc', 'name:desc', 'sortOrder:asc', 'sortOrder:desc']
+field_expansion:
+  expand:
+    param: expand
+    description: >-
+      Expands nested properties in the response, e.g. properties[$all] or
+      properties[alias1,alias2].
+  sparse_fields:
+    param: fields
+    description: >-
+      Restricts which properties are returned; by default all properties are included.
+      e.g. properties[alias1] or properties[$all].
+  note: >-
+    A real expand/sparse-fieldset contract — unusually well specified for a CMS
+    surface, and the single most useful convention for an agent consuming this API
+    (fetch only the properties needed rather than whole content trees).
+localization:
+  headers:
+  - name: Accept-Language
+    description: Language to return, for language-variant content items.
+  - name: Accept-Segment
+    description: Segment to return, for segment-variant content items.
+  response_field: cultures
+content_scoping:
+  headers:
+  - name: Start-Item
+    description: URL segment or GUID of a root content item, scoping the query to one site root.
+  - name: Preview
+    type: boolean
+    description: >-
+      Whether to request draft (unpublished) content. Requires an authorized
+      configuration; anonymous callers receive published content only.
+request_tracing:
+  request_id_header: null
+  note: No correlation/request-id header is documented or declared in either specification.
+versioning:
+  scheme: uri-path
+  current: v2
+  legacy: v1
+  detail: lifecycle/ripe-insurance-lifecycle.yml
+error_envelope:
+  format: rfc7807
+  media_type: application/json
+  schema: ProblemDetails
+  fields: [type, title, status, detail, instance]
+  extensible: true
+  detail_artifact: errors/ripe-insurance-problem-types.yml
+  note: >-
+    The ProblemDetails schema is RFC 7807-shaped but is served as application/json,
+    not application/problem+json, so it does not satisfy strict RFC 9457 content-type
+    negotiation.
+rate_limiting:
+  documented: false
+  headers: []
+  note: >-
+    No rate-limit policy, quota or throttling header is documented or observed. The API
+    is not offered as a product, so no plan or quota exists. robots.txt on every brand
+    host carries "Disallow: /umbraco/".
+webhooks:
+  supported: false
+  note: No event, webhook, streaming or AsyncAPI surface anywhere on the Ripe estate.
+cross_links:
+  authentication: authentication/ripe-insurance-authentication.yml
+  scopes: scopes/ripe-insurance-scopes.yml
+  errors: errors/ripe-insurance-problem-types.yml
+  lifecycle: lifecycle/ripe-insurance-lifecycle.yml
+  data_model: data-model/ripe-insurance-data-model.yml
+  agentic_access: agentic-access/ripe-insurance-agentic-access.yml

@@ -1,0 +1,70 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the Ripe Insurance Umbraco Content Delivery API
+  version: 1.0.0
+x-apievangelist:
+  generated: '2026-07-25'
+  method: generated
+  source: openapi/ripe-insurance-umbraco-content-delivery-openapi.json
+  note: >-
+    Non-destructive enhancements applied on top of the verbatim harvested specification.
+    The original is Umbraco CMS vendor boilerplate: it declares no servers[], carries
+    info.version "Latest", and has no external documentation link, contact or licence.
+    This overlay supplies the production server, real provenance, and the honest
+    classification that this is content infrastructure and not an insurance API.
+extends: openapi/ripe-insurance-umbraco-content-delivery-openapi.json
+actions:
+- target: $.info
+  update:
+    title: Ripe Insurance Umbraco Content Delivery API
+    x-apievangelist-provider: ripe-insurance
+    x-apievangelist-harvested: '2026-07-25'
+    x-apievangelist-source: https://www.ripeinsurance.co.uk/umbraco/swagger/delivery/swagger.json
+    x-apievangelist-classification: cms-content-infrastructure
+    x-apievangelist-note: >-
+      Read-only website content and media served by the Umbraco CMS that powers the Ripe
+      Insurance marketing and quote site. Not a quote, bind, issue, policy, billing or
+      FNOL API. Ripe neither documents nor promotes this surface, and robots.txt carries
+      "Disallow: /umbraco/".
+    x-apievangelist-industry: Insurance
+    x-apievangelist-country: United Kingdom
+    x-apievangelist-regulator: FCA (FRN 313411)
+- target: $.info
+  update:
+    contact:
+      name: Ripe Insurance Services Limited
+      url: https://www.ripeinsurance.co.uk/help-and-support/
+- target: $.externalDocs
+  update:
+    description: Umbraco Content Delivery API reference (the platform vendor's documentation)
+    url: https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api
+- target: $.servers
+  update:
+  - url: https://www.ripeinsurance.co.uk
+    description: Ripe Insurance production site (verified live, anonymous, 2026-07-25)
+  - url: https://www.cycleplan.co.uk
+    description: Cycleplan brand site (equivalent surface, one CMS version behind)
+  - url: https://www.golfcare.co.uk
+    description: Golf Care brand site (equivalent surface)
+  - url: https://www.insure4sport.co.uk
+    description: Insure4Sport brand site (equivalent surface)
+- target: $.paths['/umbraco/delivery/api/v2/content'].get
+  update:
+    x-apievangelist-verified: '2026-07-25'
+    x-apievangelist-observation: Returned HTTP 200 anonymously with total 345 content items.
+    x-agentic-access:
+      action-class: connected
+      consequence: read
+      token: {max-ttl: 3600}
+- target: $.paths['/umbraco/delivery/api/v2/media'].get
+  update:
+    x-agentic-access:
+      action-class: connected
+      consequence: read
+      token: {max-ttl: 3600}
+- target: $.components.schemas.ProblemDetails
+  update:
+    x-apievangelist-error-catalog: errors/ripe-insurance-problem-types.yml
+    x-apievangelist-note: >-
+      RFC 7807-shaped but served as application/json, not application/problem+json; the
+      `type` field is nullable and no problem-type URIs are minted.

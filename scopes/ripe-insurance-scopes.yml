@@ -1,0 +1,50 @@
+generated: '2026-07-25'
+method: searched
+source: https://www.ripeinsurance.co.uk/.well-known/openid-configuration (fetched 2026-07-25)
+docs: https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#protected-content
+note: >-
+  Neither harvested OpenAPI declares an oauth2 securityScheme, so the mechanical
+  derivation (0-working/derive-oauth-scopes.py) returned nothing. The scopes below were
+  read from the live OpenID Connect discovery document published by the Umbraco
+  (OpenIddict) member-authentication server. This is the WEBSITE CUSTOMER LOGIN scope
+  surface, not a partner or developer API scope surface — Ripe publishes no developer
+  scopes because it publishes no developer API. Recorded because it is real and
+  anonymously readable.
+schemes:
+- name: umbraco-member-oidc
+  type: openIdConnect
+  source: well-known/ripe-insurance-openid-configuration.json
+  issuer: https://www.ripeinsurance.co.uk/
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://www.ripeinsurance.co.uk/umbraco/delivery/api/v1/security/member/authorize
+    tokenUrl: https://www.ripeinsurance.co.uk/umbraco/delivery/api/v1/security/member/token
+    pkce: [S256, plain]
+  - flow: clientCredentials
+    tokenUrl: https://www.ripeinsurance.co.uk/umbraco/delivery/api/v1/security/member/token
+  - flow: refreshToken
+    tokenUrl: https://www.ripeinsurance.co.uk/umbraco/delivery/api/v1/security/member/token
+scopes:
+- scope: openid
+  description: >-
+    Standard OpenID Connect scope. Requests an ID token identifying the authenticated
+    Ripe Insurance website member (claims: aud, exp, iat, iss, sub).
+  flows: [authorizationCode]
+  sources: [well-known/ripe-insurance-openid-configuration.json]
+  standard: OpenID Connect Core 1.0
+- scope: offline_access
+  description: >-
+    Requests a refresh token so the member session can be renewed without
+    re-authentication.
+  flows: [authorizationCode]
+  sources: [well-known/ripe-insurance-openid-configuration.json]
+  standard: OpenID Connect Core 1.0
+coverage:
+  scopes_total: 2
+  vendor_standard: 2
+  provider_specific: 0
+  note: >-
+    Zero provider-specific scopes. Every scope advertised is an unmodified OpenID
+    Connect standard scope emitted by the CMS default configuration — there is no
+    resource-scoped permission model (no read:policy, no quote:create, nothing
+    insurance-shaped) because no insurance API is exposed.

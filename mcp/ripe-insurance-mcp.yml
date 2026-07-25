@@ -1,0 +1,82 @@
+generated: '2026-07-25'
+method: derived
+status: candidate
+source: >-
+  openapi/ripe-insurance-umbraco-content-delivery-openapi.json,
+  openapi/ripe-insurance-cycleplan-content-delivery-openapi.json
+searched:
+- {url: 'https://mcp.ripeinsurance.co.uk/', status: 000, note: host does not resolve}
+- {url: 'https://mcp.cycleplan.co.uk/', status: 000, note: host does not resolve}
+- {url: 'https://www.ripeinsurance.co.uk/mcp', status: 404}
+- {url: 'https://www.cycleplan.co.uk/mcp', status: 404}
+- {url: 'https://www.cycleplan.co.uk/.well-known/mcp.json', status: 404}
+- {url: 'https://www.cycleplan.co.uk/.well-known/oauth-protected-resource', status: 404}
+- {url: 'https://registry.modelcontextprotocol.io/v0/servers?search=ripe', status: 200, result: no Ripe server}
+- {url: 'https://registry.modelcontextprotocol.io/v0/servers?search=cycleplan', status: 200, result: 0 servers}
+note: >-
+  RIPE INSURANCE PUBLISHES NO MCP SERVER. No hosted endpoint, no npm package, no entry
+  in the official MCP registry, and no MCP reference anywhere on the brand estate
+  (probed 2026-07-25). The tool list below is a CANDIDATE derived mechanically from the
+  operationIds in the two harvested Umbraco Content Delivery API specifications — a
+  design sketch of what an agent-facing surface over Ripe's ONLY public API would look
+  like. Do not treat these tool names as real. Every source_operation was verified
+  verbatim against the specification it names.
+adjacent_agent_surface:
+  name: Cycleplan ChatGPT app
+  launched: '2026-04-28'
+  source: https://www.ripethinking.co.uk/news/ripe-to-launch-uk-first-chatgpt-app-for-cycling-insurance/
+  note: >-
+    Ripe announced a UK-first ChatGPT app for cycling insurance under the Cycleplan
+    brand — real-time confirmed quote in conversation, click-through to the Cycleplan
+    declarations and payment page, built in-house. ChatGPT apps are built on the OpenAI
+    Apps SDK, which runs on MCP, so an MCP server almost certainly exists PRIVATELY
+    behind that app. Nothing about it is published: no endpoint, no tool list, no
+    manifest, no spec, no registry entry. It is recorded here as context, not as a
+    public MCP surface, and it is not counted as a published server.
+  agent_readable_context:
+    note: >-
+      What Ripe DOES publish for agents is llms.txt on three brand hosts — see
+      llms/. That is the estate's real agent-facing surface today.
+server:
+  name: ripe-insurance-content
+  transport: http
+  url: null
+  auth: none
+  note: No server exists. `url` is null deliberately.
+tools:
+- name: list_content
+  description: List published content items on a Ripe brand site, with fetch/filter/sort and skip/take paging.
+  source_operation: openapi/ripe-insurance-umbraco-content-delivery-openapi.json#GetContent2.0
+  read_only: true
+- name: get_content_item_by_id
+  description: Get one published content item by GUID.
+  source_operation: openapi/ripe-insurance-umbraco-content-delivery-openapi.json#GetContentItemById2.0
+  read_only: true
+- name: get_content_item_by_path
+  description: Get one published content item by URL path.
+  source_operation: openapi/ripe-insurance-umbraco-content-delivery-openapi.json#GetContentItemByPath2.0
+  read_only: true
+- name: get_content_items
+  description: Get several content items in one call by an array of ids.
+  source_operation: openapi/ripe-insurance-umbraco-content-delivery-openapi.json#GetContentItems2.0
+  read_only: true
+- name: list_media
+  description: List media items with paging.
+  source_operation: openapi/ripe-insurance-umbraco-content-delivery-openapi.json#GetMedia2.0
+  read_only: true
+- name: get_media_item_by_id
+  description: Get one media item by GUID, with crops and focal point.
+  source_operation: openapi/ripe-insurance-umbraco-content-delivery-openapi.json#GetMediaItemById2.0
+  read_only: true
+- name: get_media_item_by_path
+  description: Get one media item by path.
+  source_operation: openapi/ripe-insurance-umbraco-content-delivery-openapi.json#GetMediaItemByPath2.0
+  read_only: true
+- name: get_media_items
+  description: Get several media items in one call by an array of ids.
+  source_operation: openapi/ripe-insurance-umbraco-content-delivery-openapi.json#GetMediaItems2.0
+  read_only: true
+capability_gaps:
+- No quote tool — quoting is not exposed as a public API on any Ripe brand.
+- No bind, issue, policy, document, payment, renewal or FNOL tool.
+- Every candidate tool is read-only content retrieval; the surface cannot transact.
