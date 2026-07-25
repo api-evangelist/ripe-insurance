@@ -1,0 +1,324 @@
+aid: ripe-insurance
+name: Ripe Insurance
+review:
+  question: Does Ripe Insurance expose a public, self-serve developer portal or documented
+    insurance API (quote, bind, issue, or FNOL)?
+  answer: false
+  date: '2026-07-25'
+  reviewer: API Evangelist
+  homeMarket: United Kingdom
+  tier: insurtech-dtc
+  gated: true
+findings:
+  summary: |
+    Ripe Insurance Services Limited (trading as Ripe, part of Ripe Thinking Limited,
+    FCA FRN 313411) is a Stockport-based UK digital MGA selling specialist personal
+    and small-commercial lines direct to consumers under Cycleplan, Golf Care,
+    Insure4Boats, Insure4Sport and Ripe Caravans. It publishes NO public developer
+    portal and NO documented insurance API. Every conventional developer host and
+    path was probed on 2026-07-25 and none resolved to a developer surface:
+    developer., developers., docs. and api. subdomains do not resolve at all (DNS
+    failure, curl exit 000), and /developers, /developer, /partners and /integrations
+    all return 404 on the primary domain.
+
+    The only integration path Ripe offers is commercial, not technical: the corporate
+    site's "Partner with Us" page (https://www.ripethinking.co.uk/partner-with-us/)
+    is a business-development enquiry form with an enquiry-type dropdown and an
+    invitation to meet at their Manchester office. It carries no technical
+    documentation, no specification, no sandbox, and no onboarding path. The
+    "Technology" page markets an in-house platform in outcome language ("we develop
+    our products, pricing matrixes and websites in-house meaning we can bring products
+    to market faster") and does not name a single API, integration protocol, or vendor.
+    This is a partner/BD wall, so gated is recorded as true.
+
+    ONE real, anonymously reachable, machine-readable API surface exists and was
+    harvested verbatim: the Umbraco CMS Content Delivery API. This is boilerplate
+    that ships with the Umbraco .NET CMS powering the marketing and quote sites — it
+    is read-only website content and media, NOT an insurance API. It is recorded
+    because it is genuinely public and parses, and because the same surface is
+    present across the Ripe brand estate, but it must not be read as an insurance
+    API programme. Ripe neither documents nor promotes it, and robots.txt carries
+    "Disallow: /umbraco/".
+
+    Quote and bind at Ripe happen entirely inside first-party consumer web funnels.
+    The one notable distribution innovation is the Cycleplan ChatGPT app announced
+    28 April 2026 — described by Ripe as a UK-first for a digital MGA, delivering a
+    real-time confirmed cycling-insurance quote conversationally and clicking through
+    to the Cycleplan declarations and payment page. It was built in-house; no MCP
+    server, OpenAI Apps SDK detail, public endpoint, or specification was published,
+    so it adds no public API surface.
+
+    ACORD posture: no ACORD reference found. The strings ACORD, AL3, ACORD XML, NGDS,
+    IVANS, Vertafore and Applied Epic return zero hits across ripeinsurance.co.uk and
+    ripethinking.co.uk including the technology, partner and about pages. This is
+    consistent with a direct-to-consumer digital MGA that owns its own distribution
+    and never touches the agency-download rails ACORD standards serve.
+  developerPortal:
+    url: ''
+    confirmed: false
+    classification: none
+    note: No first-party developer portal exists. The nearest integration surface is
+      a business-development contact form on the corporate site, classified as a
+      partner/BD wall rather than a developer portal.
+  probes:
+  - url: https://www.ripeinsurance.co.uk/
+    status: 200
+    note: Primary marketing and quote site, Umbraco CMS. ripeinsurance.co.uk redirects
+      here.
+  - url: https://developer.ripeinsurance.co.uk/
+    status: 000
+    note: Host does not resolve.
+  - url: https://developers.ripeinsurance.co.uk/
+    status: 000
+    note: Host does not resolve.
+  - url: https://docs.ripeinsurance.co.uk/
+    status: 000
+    note: Host does not resolve.
+  - url: https://api.ripeinsurance.co.uk/
+    status: 000
+    note: Host does not resolve.
+  - url: https://www.ripeinsurance.co.uk/developers
+    status: 404
+  - url: https://www.ripeinsurance.co.uk/developer
+    status: 404
+  - url: https://www.ripeinsurance.co.uk/partners
+    status: 404
+  - url: https://www.ripeinsurance.co.uk/integrations
+    status: 404
+  - url: https://www.ripeinsurance.co.uk/api/
+    status: 403
+    note: Returns a 403 wall, not an API. No JSON body, no specification.
+  - url: https://www.ripeinsurance.co.uk/openapi.json
+    status: 404
+  - url: https://www.ripeinsurance.co.uk/swagger.json
+    status: 404
+  - url: https://www.ripeinsurance.co.uk/api-docs
+    status: 404
+  - url: https://www.ripeinsurance.co.uk/wp-json/
+    status: 404
+    note: Not WordPress; the site is Umbraco.
+  - url: https://www.ripeinsurance.co.uk/graphql
+    status: 404
+    note: POST introspection attempted; no GraphQL surface.
+  - url: https://www.ripethinking.co.uk/graphql
+    status: 404
+  - url: https://www.ripeinsurance.co.uk/robots.txt
+    status: 200
+    note: 'Umbraco SEO Checker robots file. Contains "Disallow: /umbraco/" — the CMS
+      API surface is explicitly excluded from crawling.'
+  - url: https://www.ripeinsurance.co.uk/sitemap.xml
+    status: 200
+    note: 342 URLs, all product, blog and policy pages. No developer, API, partner
+      or integration path anywhere in the sitemap.
+  - url: https://www.ripeinsurance.co.uk/umbraco/swagger/index.html
+    status: 200
+    note: Stock Swagger UI shipped by Umbraco, not a curated developer reference.
+  - url: https://www.ripeinsurance.co.uk/umbraco/swagger/delivery/swagger.json
+    status: 200
+    note: Real OpenAPI 3.0.4, parses, 8 paths. Harvested verbatim.
+  - url: https://www.ripeinsurance.co.uk/umbraco/delivery/api/v2/content
+    status: 200
+    note: Live, anonymous, returned total 345 content items.
+  - url: https://www.ripeinsurance.co.uk/umbraco/delivery/api/v1/content
+    status: 400
+    note: v1 superseded by v2.
+  - url: https://www.ripeinsurance.co.uk/.well-known/openid-configuration
+    status: 200
+    note: Real OIDC discovery document for Umbraco member authentication.
+  - url: https://www.ripeinsurance.co.uk/.well-known/oauth-authorization-server
+    status: 404
+  - url: https://cycleplan.co.uk/umbraco/swagger/delivery/swagger.json
+    status: 200
+    note: Same Umbraco CMS surface on the Cycleplan brand.
+  - url: https://www.golfcare.co.uk/umbraco/swagger/delivery/swagger.json
+    status: 200
+    note: Same Umbraco CMS surface on the Golf Care brand.
+  - url: https://www.insure4sport.co.uk/umbraco/swagger/delivery/swagger.json
+    status: 200
+    note: Same Umbraco CMS surface on the Insure4Sport brand.
+  - url: https://www.insure4boats.co.uk/umbraco/swagger/delivery/swagger.json
+    status: 404
+    note: Delivery API not enabled on this brand.
+  - url: https://www.ripethinking.co.uk/umbraco/swagger/delivery/swagger.json
+    status: 404
+    note: Corporate site does not expose the delivery API.
+  specifications:
+    count: 1
+    insuranceSpecifications: 0
+    harvested:
+    - path: openapi/ripe-insurance-umbraco-content-delivery-openapi.json
+      sourceURL: https://www.ripeinsurance.co.uk/umbraco/swagger/delivery/swagger.json
+      httpStatus: 200
+      fetchDate: '2026-07-25'
+      format: OpenAPI 3.0.4
+      title: Umbraco Delivery API
+      version: Latest
+      paths: 8
+      operations: 8
+      verbs:
+      - GET
+      pathList:
+      - GET /umbraco/delivery/api/v2/content
+      - GET /umbraco/delivery/api/v2/content/item/{path}
+      - GET /umbraco/delivery/api/v2/content/item/{id}
+      - GET /umbraco/delivery/api/v2/content/items
+      - GET /umbraco/delivery/api/v2/media
+      - GET /umbraco/delivery/api/v2/media/item/{path}
+      - GET /umbraco/delivery/api/v2/media/item/{id}
+      - GET /umbraco/delivery/api/v2/media/items
+      classification: CMS content infrastructure, not an insurance API
+      note: Declares no servers[] and no securitySchemes. Read-only. Vendor boilerplate
+        emitted by the Umbraco CMS, not authored or published by Ripe.
+  acord:
+    posture: no ACORD reference found
+    searched:
+    - ACORD
+    - AL3
+    - ACORD XML
+    - ACORD certified
+    - NGDS
+    - IVANS
+    - Vertafore
+    - Applied Epic
+    scanned:
+    - https://www.ripeinsurance.co.uk/
+    - https://www.ripethinking.co.uk/
+    - https://www.ripethinking.co.uk/technology/
+    - https://www.ripethinking.co.uk/partner-with-us/
+    - https://www.ripethinking.co.uk/about-us/
+    hits: 0
+    note: Zero hits. Expected for a direct-to-consumer digital MGA that owns its own
+      distribution end to end and does not exchange business over agency-download or
+      broker EDI rails, which is what ACORD AL3 and ACORD XML exist to carry.
+  insuranceVerbs:
+    quote:
+      exposedAsAPI: false
+      note: Quoting is available only through first-party consumer web funnels and,
+        since 28 April 2026, the Cycleplan ChatGPT app. No public quote endpoint or
+        specification is published.
+    bind:
+      exposedAsAPI: false
+      note: Bind and payment complete on the brand websites. No public API.
+    issue:
+      exposedAsAPI: false
+      note: Policy issuance and documents are delivered through the customer login
+        area. No public API.
+    fnol:
+      exposedAsAPI: false
+      note: Claims are notified through the how-to-claim page and per-brand claims
+        lines, not an API.
+    audience: consumer-facing web and conversational channels only; no agent-facing
+      or partner-facing API surface is published.
+  authModel:
+    scheme: OAuth2 / OpenID Connect (site members only)
+    issuer: https://www.ripeinsurance.co.uk/
+    discovery: https://www.ripeinsurance.co.uk/.well-known/openid-configuration
+    grantTypesSupported:
+    - authorization_code
+    - refresh_token
+    - client_credentials
+    scopesSupported:
+    - openid
+    - offline_access
+    codeChallengeMethods:
+    - plain
+    - S256
+    idTokenSigningAlg:
+    - RS256
+    jwks: https://www.ripeinsurance.co.uk/.well-known/jwks
+    note: This is the Umbraco member-authentication server (OpenIddict) that fronts
+      the website customer login, not a partner or developer API authorization server.
+      No API keys, no developer credentials, and no client registration are offered
+      publicly. The harvested Content Delivery API requires no authentication at all.
+  webhooks:
+    present: false
+    asyncapi: false
+    note: No event catalog, webhook documentation, or AsyncAPI definition exists. In
+      this sector absence is the norm and is recorded as a finding.
+  postman:
+    present: false
+    note: No public Postman collection or workspace found.
+  graphql:
+    present: false
+    note: /graphql returns 404 on both the consumer and corporate domains.
+  grpc:
+    present: false
+    note: No published .proto.
+  transports:
+  - protocol: REST
+    scheme: https
+    baseURL: https://www.ripeinsurance.co.uk/umbraco/delivery/api/v2
+    documented: true
+    note: Umbraco CMS Content Delivery API. Read-only content and media. Not insurance.
+  - protocol: OIDC
+    scheme: https
+    baseURL: https://www.ripeinsurance.co.uk/umbraco/delivery/api/v1/security/member
+    documented: true
+    note: Website member authentication only.
+  - protocol: Conversational
+    scheme: https
+    documented: false
+    note: Cycleplan ChatGPT app, launched 28 April 2026. Real-time quote plus click-through
+      to payment. Built in-house. No public API, MCP server, or specification published.
+  - protocol: GraphQL
+    documented: false
+  - protocol: WebSocket
+    documented: false
+  - protocol: gRPC
+    documented: false
+  - protocol: ACORD/EDI
+    documented: false
+    note: No ACORD, AL3, or IVANS rail referenced anywhere.
+  marketContext: |
+    The United Kingdom has the FCA and PRA but no open-insurance obligation; the FCA's
+    Open Finance work remains consultation rather than rule. The UK's genuine
+    market-wide data and API infrastructure effort is the London Market modernisation
+    programme (Blueprint Two, PPL, Whitespace, Ki), which is aimed at brokers and
+    syndicates rather than developers and is therefore invisible from outside. Ripe
+    sits in the other UK cluster — the dense insurtech D2C cluster alongside Zego,
+    Marshmallow, Cuvva and Superscript — and its posture confirms the pattern: a
+    digital MGA that invests heavily in its own distribution technology and channels
+    while publishing nothing an external developer can consume.
+sources:
+- url: https://www.ripeinsurance.co.uk/
+  type: Website
+  note: Product lines, FCA FRN 313411, 400,000+ customers, 30 years of specialist
+    insurance. No API, developer, or integration mention.
+- url: https://www.ripethinking.co.uk/
+  type: CorporateWebsite
+  note: Digital MGA positioning, brands, turnover £24.9m (2025, up 21%), 356,000+
+    policyholders at time of publication, HQ One Stockport Exchange, Railway Road,
+    Stockport. Acquired Schofields Limited December 2025.
+- url: https://www.ripethinking.co.uk/partner-with-us/
+  type: Partners
+  note: Business-development enquiry form. No technical documentation or onboarding.
+- url: https://www.ripethinking.co.uk/technology/
+  type: Documentation
+  note: Marketing description of in-house platform, analytics, robotics and AI. No
+    API, protocol, or vendor named.
+- url: https://www.ripethinking.co.uk/news/ripe-to-launch-uk-first-chatgpt-app-for-cycling-insurance/
+  type: News
+  note: Cycleplan ChatGPT app, 28 April 2026. CIO Andrew Harrington — "We have created
+    a platform that can plug into new environments and support different ways for
+    customers to access our products." No API published.
+- url: https://www.ripethinking.co.uk/news/insurtech-platform-ripe-announces-majority-investment-from-aquiline-capital-partners-llc/
+  type: News
+  note: Aquiline Capital Partners majority investment.
+- url: https://www.ripeinsurance.co.uk/umbraco/swagger/delivery/swagger.json
+  type: OpenAPI
+  note: The single real specification harvested. Umbraco CMS boilerplate.
+- url: https://www.ripeinsurance.co.uk/.well-known/openid-configuration
+  type: Authentication
+  note: Umbraco member OIDC discovery document.
+actions:
+  openapiHarvested: true
+  specsSaved: 1
+  insuranceSpecsSaved: 0
+  apisYmlEntries: 1
+  reason: |
+    Recorded as an honest stub. Ripe Insurance publishes no developer portal and no
+    insurance API; the only public machine-readable surface is CMS infrastructure
+    that ships with Umbraco, harvested verbatim and labelled as such so it is never
+    mistaken for a quote, bind, issue, or FNOL capability. ACORD posture is a clean
+    negative. This is the correct and expected outcome for a UK direct-to-consumer
+    digital MGA in a market with no open-insurance mandate.

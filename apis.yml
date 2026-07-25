@@ -1,0 +1,93 @@
+aid: ripe-insurance
+url: https://raw.githubusercontent.com/api-evangelist/ripe-insurance/refs/heads/main/apis.yml
+name: Ripe Insurance
+kind: company
+description: Ripe Insurance Services Limited, trading as Ripe and part of Ripe Thinking
+  Limited, is a Stockport-based United Kingdom digital Managing General Agent and specialist
+  insurance intermediary authorised and regulated by the Financial Conduct Authority
+  (FRN 313411). Founded in 1997 and majority-backed by Aquiline Capital Partners, Ripe
+  underwrites and distributes niche personal and small-commercial lines direct to consumers
+  through its own brands — Cycleplan, Golf Care, Insure4Boats, Insure4Sport and Ripe
+  Caravans — covering caravans and motorhomes, park homes and holiday homes, photography
+  and music equipment, valuables, shooting, golf, cycling, boats, over 400 sports, personal
+  trainers, hair and beauty businesses, clubs and leisure organisations, and small business.
+  It reports more than 400,000 policyholders. Ripe's API posture is honestly assessed
+  as partner-gated with no public developer surface — there is no developer portal, no
+  self-serve API programme, no published quote, bind, issue or FNOL API, and no ACORD
+  reference anywhere on its estate. Its in-house platform is marketed as flexible and
+  fast to integrate, but partnering is a business-development contact form on
+  ripethinking.co.uk rather than a technical onboarding path. The only anonymously
+  reachable, machine-readable API surface across the Ripe brand estate is the Umbraco
+  CMS Content Delivery API that ships with its .NET content management system — read-only
+  content and media, incidental infrastructure rather than an insurance product API. Its
+  April 2026 Cycleplan ChatGPT app delivers real-time cycling quotes conversationally,
+  but is a first-party consumer channel with no published API, MCP server, or spec.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Insurance
+- United Kingdom
+- Insurtech
+- Managing General Agent
+- Specialist Insurance
+- Personal Lines
+- Small Business Insurance
+- Underwriting
+- Direct to Consumer
+- Broker
+created: '2026-07-25'
+modified: '2026-07-25'
+specificationVersion: '0.19'
+apis:
+- aid: ripe-insurance:ripe-insurance-umbraco-content-delivery-api
+  name: Ripe Insurance Umbraco Content Delivery API
+  description: The read-only Umbraco CMS Content Delivery API served anonymously from
+    the Ripe Insurance marketing and quote site. This is platform infrastructure that
+    ships with Umbraco, not an insurance product API — it exposes eight GET operations
+    over website content and media items and contains no quote, bind, issue, policy,
+    billing, or FNOL capability. Confirmed live and parsing as OpenAPI 3.0.4 on 2026-07-25,
+    with an equivalent surface present on cycleplan.co.uk, golfcare.co.uk and
+    insure4sport.co.uk. Ripe does not document or promote this as a developer offering
+    and robots.txt disallows /umbraco/. Recorded because it is real and publicly
+    reachable, not because it constitutes an insurance API.
+  humanURL: https://www.ripeinsurance.co.uk/umbraco/swagger/index.html
+  baseURL: https://www.ripeinsurance.co.uk/umbraco/delivery/api/v2
+  tags:
+  - Content
+  - Media
+  - CMS
+  - Umbraco
+  properties:
+  - type: OpenAPI
+    url: openapi/ripe-insurance-umbraco-content-delivery-openapi.json
+  - type: APIReference
+    url: https://www.ripeinsurance.co.uk/umbraco/swagger/index.html
+  - type: Documentation
+    url: https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api
+common:
+- type: Website
+  url: https://www.ripeinsurance.co.uk/
+- type: CorporateWebsite
+  url: https://www.ripethinking.co.uk/
+- type: Partners
+  url: https://www.ripethinking.co.uk/partner-with-us/
+- type: Technology
+  url: https://www.ripethinking.co.uk/technology/
+- type: About
+  url: https://www.ripeinsurance.co.uk/about/
+- type: Support
+  url: https://www.ripeinsurance.co.uk/help-and-support/
+- type: Claims
+  url: https://www.ripeinsurance.co.uk/how-to-claim/
+- type: TermsOfService
+  url: https://www.ripeinsurance.co.uk/terms-of-use/
+- type: PrivacyPolicy
+  url: https://www.ripeinsurance.co.uk/privacy-policy/
+- type: News
+  url: https://www.ripethinking.co.uk/news/
+- type: LinkedIn
+  url: https://uk.linkedin.com/company/ripe-insurance
+- type: OpenIDConnectDiscovery
+  url: https://www.ripeinsurance.co.uk/.well-known/openid-configuration
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
