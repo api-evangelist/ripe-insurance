@@ -13,7 +13,8 @@ surfaces:
   openapi:
     file: openapi/ripe-insurance-umbraco-content-delivery-openapi.json
     url: https://www.ripeinsurance.co.uk/umbraco/swagger/delivery/swagger.json
-    status: public, anonymous, live 2026-07-25
+    status: published
+    status_raw: published
     operations: 8
   openapi_secondary:
     file: openapi/ripe-insurance-cycleplan-content-delivery-openapi.json
