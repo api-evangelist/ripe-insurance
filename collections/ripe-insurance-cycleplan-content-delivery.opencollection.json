@@ -1,0 +1,734 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Umbraco Delivery API",
+    "version": "Latest"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Content",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GetContent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/umbraco/delivery/api/v1/content",
+            "headers": [
+              {
+                "name": "Accept-Language",
+                "value": ""
+              },
+              {
+                "name": "Api-Key",
+                "value": ""
+              },
+              {
+                "name": "Preview",
+                "value": ""
+              },
+              {
+                "name": "Start-Item",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "fetch",
+                "value": "",
+                "type": "query",
+                "description": "Specifies the content items to fetch. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Defines how to filter the fetched content items. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Defines how to sort the found content items. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "Specifies the number of found content items to skip. Use this to control pagination of the response."
+              },
+              {
+                "name": "take",
+                "value": "",
+                "type": "query",
+                "description": "Specifies the number of found content items to take. Use this to control pagination of the response."
+              },
+              {
+                "name": "expand",
+                "value": "",
+                "type": "query",
+                "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GetContent2.0",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/umbraco/delivery/api/v2/content",
+            "headers": [
+              {
+                "name": "Accept-Language",
+                "value": ""
+              },
+              {
+                "name": "Api-Key",
+                "value": ""
+              },
+              {
+                "name": "Preview",
+                "value": ""
+              },
+              {
+                "name": "Start-Item",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "fetch",
+                "value": "",
+                "type": "query",
+                "description": "Specifies the content items to fetch. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Defines how to filter the fetched content items. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Defines how to sort the found content items. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "Specifies the number of found content items to skip. Use this to control pagination of the response."
+              },
+              {
+                "name": "take",
+                "value": "",
+                "type": "query",
+                "description": "Specifies the number of found content items to take. Use this to control pagination of the response."
+              },
+              {
+                "name": "expand",
+                "value": "",
+                "type": "query",
+                "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Explicitly defines which properties should be included in the response (by default all properties are included). Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GetContentItem",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/umbraco/delivery/api/v1/content/item",
+            "headers": [
+              {
+                "name": "Accept-Language",
+                "value": ""
+              },
+              {
+                "name": "Api-Key",
+                "value": ""
+              },
+              {
+                "name": "Preview",
+                "value": ""
+              },
+              {
+                "name": "Start-Item",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "expand",
+                "value": "",
+                "type": "query",
+                "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GetContentItemByPath",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/umbraco/delivery/api/v1/content/item/:path",
+            "headers": [
+              {
+                "name": "Accept-Language",
+                "value": ""
+              },
+              {
+                "name": "Api-Key",
+                "value": ""
+              },
+              {
+                "name": "Preview",
+                "value": ""
+              },
+              {
+                "name": "Start-Item",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "path",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "expand",
+                "value": "",
+                "type": "query",
+                "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GetContentItemByPath2.0",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/umbraco/delivery/api/v2/content/item/:path",
+            "headers": [
+              {
+                "name": "Accept-Language",
+                "value": ""
+              },
+              {
+                "name": "Api-Key",
+                "value": ""
+              },
+              {
+                "name": "Preview",
+                "value": ""
+              },
+              {
+                "name": "Start-Item",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "path",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "expand",
+                "value": "",
+                "type": "query",
+                "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Explicitly defines which properties should be included in the response (by default all properties are included). Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GetContentItemById",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/umbraco/delivery/api/v1/content/item/:id",
+            "headers": [
+              {
+                "name": "Accept-Language",
+                "value": ""
+              },
+              {
+                "name": "Api-Key",
+                "value": ""
+              },
+              {
+                "name": "Preview",
+                "value": ""
+              },
+              {
+                "name": "Start-Item",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "expand",
+                "value": "",
+                "type": "query",
+                "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GetContentItemById2.0",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/umbraco/delivery/api/v2/content/item/:id",
+            "headers": [
+              {
+                "name": "Accept-Language",
+                "value": ""
+              },
+              {
+                "name": "Api-Key",
+                "value": ""
+              },
+              {
+                "name": "Preview",
+                "value": ""
+              },
+              {
+                "name": "Start-Item",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "expand",
+                "value": "",
+                "type": "query",
+                "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Explicitly defines which properties should be included in the response (by default all properties are included). Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GetContentItems2.0",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/umbraco/delivery/api/v2/content/items",
+            "headers": [
+              {
+                "name": "Accept-Language",
+                "value": ""
+              },
+              {
+                "name": "Api-Key",
+                "value": ""
+              },
+              {
+                "name": "Preview",
+                "value": ""
+              },
+              {
+                "name": "Start-Item",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "expand",
+                "value": "",
+                "type": "query",
+                "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Explicitly defines which properties should be included in the response (by default all properties are included). Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Media",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GetMedia",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/umbraco/delivery/api/v1/media",
+            "headers": [
+              {
+                "name": "Api-Key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "fetch",
+                "value": "",
+                "type": "query",
+                "description": "Specifies the media items to fetch. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Defines how to filter the fetched media items. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Defines how to sort the found media items. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "Specifies the number of found media items to skip. Use this to control pagination of the response."
+              },
+              {
+                "name": "take",
+                "value": "",
+                "type": "query",
+                "description": "Specifies the number of found media items to take. Use this to control pagination of the response."
+              },
+              {
+                "name": "expand",
+                "value": "",
+                "type": "query",
+                "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GetMedia2.0",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/umbraco/delivery/api/v2/media",
+            "headers": [
+              {
+                "name": "Api-Key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "fetch",
+                "value": "",
+                "type": "query",
+                "description": "Specifies the media items to fetch. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Defines how to filter the fetched media items. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Defines how to sort the found media items. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "Specifies the number of found media items to skip. Use this to control pagination of the response."
+              },
+              {
+                "name": "take",
+                "value": "",
+                "type": "query",
+                "description": "Specifies the number of found media items to take. Use this to control pagination of the response."
+              },
+              {
+                "name": "expand",
+                "value": "",
+                "type": "query",
+                "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Explicitly defines which properties should be included in the response (by default all properties are included). Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GetMediaItem",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/umbraco/delivery/api/v1/media/item",
+            "headers": [
+              {
+                "name": "Api-Key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "expand",
+                "value": "",
+                "type": "query",
+                "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GetMediaItemByPath",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/umbraco/delivery/api/v1/media/item/:path",
+            "headers": [
+              {
+                "name": "Api-Key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "path",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "expand",
+                "value": "",
+                "type": "query",
+                "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GetMediaItemByPath2.0",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/umbraco/delivery/api/v2/media/item/:path",
+            "headers": [
+              {
+                "name": "Api-Key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "path",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "expand",
+                "value": "",
+                "type": "query",
+                "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Explicitly defines which properties should be included in the response (by default all properties are included). Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GetMediaItemById",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/umbraco/delivery/api/v1/media/item/:id",
+            "headers": [
+              {
+                "name": "Api-Key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "expand",
+                "value": "",
+                "type": "query",
+                "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GetMediaItemById2.0",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/umbraco/delivery/api/v2/media/item/:id",
+            "headers": [
+              {
+                "name": "Api-Key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "expand",
+                "value": "",
+                "type": "query",
+                "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Explicitly defines which properties should be included in the response (by default all properties are included). Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GetMediaItems2.0",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/umbraco/delivery/api/v2/media/items",
+            "headers": [
+              {
+                "name": "Api-Key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "expand",
+                "value": "",
+                "type": "query",
+                "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Explicitly defines which properties should be included in the response (by default all properties are included). Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

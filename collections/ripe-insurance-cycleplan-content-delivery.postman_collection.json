@@ -1,0 +1,4559 @@
+{
+  "item": [
+    {
+      "id": "0b31bb15-3d35-4717-bc71-9ca21ab28b87",
+      "name": "Content",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8a7e4498-f092-48a1-8d6f-1e809dca195b",
+          "name": "Get Content",
+          "request": {
+            "name": "Get Content",
+            "description": {},
+            "url": {
+              "path": [
+                "umbraco",
+                "delivery",
+                "api",
+                "v1",
+                "content"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fetch",
+                  "value": "<string>",
+                  "description": "Specifies the content items to fetch. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Defines how to filter the fetched content items. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Defines how to filter the fetched content items. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>",
+                  "description": "Defines how to sort the found content items. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>",
+                  "description": "Defines how to sort the found content items. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+                },
+                {
+                  "disabled": false,
+                  "key": "skip",
+                  "value": "0",
+                  "description": "Specifies the number of found content items to skip. Use this to control pagination of the response."
+                },
+                {
+                  "disabled": false,
+                  "key": "take",
+                  "value": "10",
+                  "description": "Specifies the number of found content items to take. Use this to control pagination of the response."
+                },
+                {
+                  "disabled": false,
+                  "key": "expand",
+                  "value": "<string>",
+                  "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Defines the language to return. Use this when querying language variant content items.",
+                "key": "Accept-Language",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "API key specified through configuration to authorize access to the API.",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Whether to request draft content.",
+                "key": "Preview",
+                "value": "<boolean>"
+              },
+              {
+                "disabled": false,
+                "description": "URL segment or GUID of a root content item.",
+                "key": "Start-Item",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "367a637c-5da0-47c5-8f15-057d56cecaa2",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v1",
+                    "content"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fetch",
+                      "value": ""
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    },
+                    {
+                      "key": "expand",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Defines the language to return. Use this when querying language variant content items.",
+                    "key": "Accept-Language",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Whether to request draft content.",
+                    "key": "Preview",
+                    "value": "<boolean>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "URL segment or GUID of a root content item.",
+                    "key": "Start-Item",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"id\": \"d7e79491-87a2-30db-c184-5a4bd52e8d9a\",\n      \"contentType\": \"string\",\n      \"properties\": {\n        \"key_0\": {}\n      },\n      \"name\": \"string\",\n      \"createDate\": \"1988-10-07T16:45:06.040Z\",\n      \"updateDate\": \"1949-12-13T16:57:27.543Z\",\n      \"route\": {\n        \"path\": \"string\",\n        \"queryString\": \"string\",\n        \"startItem\": {\n          \"id\": \"c6902582-967c-c635-9475-bb8c81d95bbc\",\n          \"path\": \"string\"\n        }\n      },\n      \"cultures\": {\n        \"key_0\": {\n          \"path\": \"string\",\n          \"queryString\": \"string\",\n          \"startItem\": {\n            \"id\": \"aab8a504-a3af-79de-46b0-ca3a4007c4a8\",\n            \"path\": \"string\"\n          }\n        },\n        \"key_1\": {\n          \"path\": \"string\",\n          \"queryString\": \"string\",\n          \"startItem\": {\n            \"id\": \"11dff018-e602-85d7-40bd-c6ca5296b886\",\n            \"path\": \"string\"\n          }\n        }\n      }\n    },\n    {\n      \"id\": \"22347c45-a11f-8bfc-02aa-d9cf261697b7\",\n      \"contentType\": \"string\",\n      \"properties\": {\n        \"key_0\": {},\n        \"key_1\": {},\n        \"key_2\": {}\n      },\n      \"name\": \"string\",\n      \"createDate\": \"1989-02-07T08:38:42.722Z\",\n      \"updateDate\": \"1949-08-31T03:31:25.624Z\",\n      \"route\": {\n        \"path\": \"string\",\n        \"queryString\": \"string\",\n        \"startItem\": {\n          \"id\": \"e3e8acfe-879f-f893-f290-00e8d828f0dd\",\n          \"path\": \"string\"\n        }\n      },\n      \"cultures\": {\n        \"key_0\": {\n          \"path\": \"string\",\n          \"queryString\": \"string\",\n          \"startItem\": {\n            \"id\": \"4b3dd11d-07d2-aa2b-816c-347d1de13c1a\",\n            \"path\": \"string\"\n          }\n        }\n      }\n    }\n  ],\n  \"total\": 348\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8905519d-91b9-46b2-80ba-f22adf97e8b2",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v1",
+                    "content"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fetch",
+                      "value": ""
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    },
+                    {
+                      "key": "expand",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Defines the language to return. Use this when querying language variant content items.",
+                    "key": "Accept-Language",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Whether to request draft content.",
+                    "key": "Preview",
+                    "value": "<boolean>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "URL segment or GUID of a root content item.",
+                    "key": "Start-Item",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 5317,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d6b828b9-714e-4cdb-a8b8-f1043c785106",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v1",
+                    "content"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fetch",
+                      "value": ""
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    },
+                    {
+                      "key": "expand",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Defines the language to return. Use this when querying language variant content items.",
+                    "key": "Accept-Language",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Whether to request draft content.",
+                    "key": "Preview",
+                    "value": "<boolean>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "URL segment or GUID of a root content item.",
+                    "key": "Start-Item",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 5317,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b06c3e80-aff8-4683-a1e5-1efda05e53d0",
+          "name": "Get Content2.0",
+          "request": {
+            "name": "Get Content2.0",
+            "description": {},
+            "url": {
+              "path": [
+                "umbraco",
+                "delivery",
+                "api",
+                "v2",
+                "content"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fetch",
+                  "value": "<string>",
+                  "description": "Specifies the content items to fetch. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Defines how to filter the fetched content items. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Defines how to filter the fetched content items. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>",
+                  "description": "Defines how to sort the found content items. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>",
+                  "description": "Defines how to sort the found content items. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+                },
+                {
+                  "disabled": false,
+                  "key": "skip",
+                  "value": "0",
+                  "description": "Specifies the number of found content items to skip. Use this to control pagination of the response."
+                },
+                {
+                  "disabled": false,
+                  "key": "take",
+                  "value": "10",
+                  "description": "Specifies the number of found content items to take. Use this to control pagination of the response."
+                },
+                {
+                  "disabled": false,
+                  "key": "expand",
+                  "value": "<string>",
+                  "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Explicitly defines which properties should be included in the response (by default all properties are included). Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Defines the language to return. Use this when querying language variant content items.",
+                "key": "Accept-Language",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "API key specified through configuration to authorize access to the API.",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Whether to request draft content.",
+                "key": "Preview",
+                "value": "<boolean>"
+              },
+              {
+                "disabled": false,
+                "description": "URL segment or GUID of a root content item.",
+                "key": "Start-Item",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4303c992-968e-4b08-a1ae-7c19f39b7dd3",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v2",
+                    "content"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fetch",
+                      "value": ""
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    },
+                    {
+                      "key": "expand",
+                      "value": ""
+                    },
+                    {
+                      "key": "fields",
+                      "value": "properties[$all]"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Defines the language to return. Use this when querying language variant content items.",
+                    "key": "Accept-Language",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Whether to request draft content.",
+                    "key": "Preview",
+                    "value": "<boolean>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "URL segment or GUID of a root content item.",
+                    "key": "Start-Item",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"id\": \"87c9c74e-e698-0165-a418-cfabbf385115\",\n      \"contentType\": \"string\",\n      \"properties\": {\n        \"key_0\": {},\n        \"key_1\": {}\n      },\n      \"name\": \"string\",\n      \"createDate\": \"2010-10-06T19:48:45.764Z\",\n      \"updateDate\": \"2008-11-01T10:48:36.608Z\",\n      \"route\": {\n        \"path\": \"string\",\n        \"queryString\": \"string\",\n        \"startItem\": {\n          \"id\": \"20db1894-7c73-bec7-18d1-78a72eb9f376\",\n          \"path\": \"string\"\n        }\n      },\n      \"cultures\": {\n        \"key_0\": {\n          \"path\": \"string\",\n          \"queryString\": \"string\",\n          \"startItem\": {\n            \"id\": \"e54c6307-80b8-114f-7898-895ada883c7b\",\n            \"path\": \"string\"\n          }\n        }\n      }\n    },\n    {\n      \"id\": \"99842e0c-9c89-2de1-9cb6-7837ffea9cfb\",\n      \"contentType\": \"string\",\n      \"properties\": {\n        \"key_0\": {},\n        \"key_1\": {}\n      },\n      \"name\": \"string\",\n      \"createDate\": \"1984-06-18T22:37:25.391Z\",\n      \"updateDate\": \"2021-11-28T21:46:17.689Z\",\n      \"route\": {\n        \"path\": \"string\",\n        \"queryString\": \"string\",\n        \"startItem\": {\n          \"id\": \"c70564ac-a05d-c039-036e-e60a2e3e3d24\",\n          \"path\": \"string\"\n        }\n      },\n      \"cultures\": {\n        \"key_0\": {\n          \"path\": \"string\",\n          \"queryString\": \"string\",\n          \"startItem\": {\n            \"id\": \"2fa59e4b-73f0-12af-1ea3-c7c9f7201dcb\",\n            \"path\": \"string\"\n          }\n        },\n        \"key_1\": {\n          \"path\": \"string\",\n          \"queryString\": \"string\",\n          \"startItem\": {\n            \"id\": \"dd6f9133-ecf7-bbfa-1a69-f7dc0bd48097\",\n            \"path\": \"string\"\n          }\n        }\n      }\n    }\n  ],\n  \"total\": 3717\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "30b85a53-9c1e-42a7-be39-1601d89a53ea",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v2",
+                    "content"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fetch",
+                      "value": ""
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    },
+                    {
+                      "key": "expand",
+                      "value": ""
+                    },
+                    {
+                      "key": "fields",
+                      "value": "properties[$all]"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Defines the language to return. Use this when querying language variant content items.",
+                    "key": "Accept-Language",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Whether to request draft content.",
+                    "key": "Preview",
+                    "value": "<boolean>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "URL segment or GUID of a root content item.",
+                    "key": "Start-Item",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 5317,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "65bffe1a-348c-4263-882f-0b8f8888b388",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v2",
+                    "content"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fetch",
+                      "value": ""
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    },
+                    {
+                      "key": "expand",
+                      "value": ""
+                    },
+                    {
+                      "key": "fields",
+                      "value": "properties[$all]"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Defines the language to return. Use this when querying language variant content items.",
+                    "key": "Accept-Language",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Whether to request draft content.",
+                    "key": "Preview",
+                    "value": "<boolean>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "URL segment or GUID of a root content item.",
+                    "key": "Start-Item",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 5317,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9f3557b8-62ed-461b-8532-9c75d5de9b60",
+          "name": "Get Content Item",
+          "request": {
+            "name": "Get Content Item",
+            "description": {},
+            "url": {
+              "path": [
+                "umbraco",
+                "delivery",
+                "api",
+                "v1",
+                "content",
+                "item"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "expand",
+                  "value": "<string>",
+                  "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Defines the language to return. Use this when querying language variant content items.",
+                "key": "Accept-Language",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "API key specified through configuration to authorize access to the API.",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Whether to request draft content.",
+                "key": "Preview",
+                "value": "<boolean>"
+              },
+              {
+                "disabled": false,
+                "description": "URL segment or GUID of a root content item.",
+                "key": "Start-Item",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8bcbc691-0989-41c8-abec-7219b3117f6c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v1",
+                    "content",
+                    "item"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "expand",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Defines the language to return. Use this when querying language variant content items.",
+                    "key": "Accept-Language",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Whether to request draft content.",
+                    "key": "Preview",
+                    "value": "<boolean>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "URL segment or GUID of a root content item.",
+                    "key": "Start-Item",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"83386707-7b20-25f3-3bf1-be38a52d403a\",\n    \"contentType\": \"string\",\n    \"properties\": {\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {},\n      \"key_3\": {}\n    },\n    \"name\": \"string\",\n    \"createDate\": \"1964-03-30T21:30:10.298Z\",\n    \"updateDate\": \"1964-11-09T14:18:22.454Z\",\n    \"route\": {\n      \"path\": \"string\",\n      \"queryString\": \"string\",\n      \"startItem\": {\n        \"id\": \"656ecde5-05de-b21f-f7ad-23a417e99d3c\",\n        \"path\": \"string\"\n      }\n    },\n    \"cultures\": {\n      \"key_0\": {\n        \"path\": \"string\",\n        \"queryString\": \"string\",\n        \"startItem\": {\n          \"id\": \"5bde74d5-2d23-7f6a-a59e-6262845f5c57\",\n          \"path\": \"string\"\n        }\n      },\n      \"key_1\": {\n        \"path\": \"string\",\n        \"queryString\": \"string\",\n        \"startItem\": {\n          \"id\": \"2ac9cce1-3506-4ca3-124f-ffedcb2552c4\",\n          \"path\": \"string\"\n        }\n      },\n      \"key_2\": {\n        \"path\": \"string\",\n        \"queryString\": \"string\",\n        \"startItem\": {\n          \"id\": \"71a5e4fc-e609-d142-9c1c-715d9af82a3a\",\n          \"path\": \"string\"\n        }\n      },\n      \"key_3\": {\n        \"path\": \"string\",\n        \"queryString\": \"string\",\n        \"startItem\": {\n          \"id\": \"312c5932-b0a9-468b-d5d0-c3f2f83fb809\",\n          \"path\": \"string\"\n        }\n      }\n    }\n  },\n  {\n    \"id\": \"28d43773-addf-0b68-9a75-605cc818d3fa\",\n    \"contentType\": \"string\",\n    \"properties\": {\n      \"key_0\": {}\n    },\n    \"name\": \"string\",\n    \"createDate\": \"2004-01-22T23:43:19.731Z\",\n    \"updateDate\": \"2000-03-20T08:37:05.218Z\",\n    \"route\": {\n      \"path\": \"string\",\n      \"queryString\": \"string\",\n      \"startItem\": {\n        \"id\": \"22d17a2b-041b-9259-6bf1-e09954b9fa1b\",\n        \"path\": \"string\"\n      }\n    },\n    \"cultures\": {\n      \"key_0\": {\n        \"path\": \"string\",\n        \"queryString\": \"string\",\n        \"startItem\": {\n          \"id\": \"cd915023-d649-35f0-c595-20ba351db9d7\",\n          \"path\": \"string\"\n        }\n      },\n      \"key_1\": {\n        \"path\": \"string\",\n        \"queryString\": \"string\",\n        \"startItem\": {\n          \"id\": \"fbacbbc8-9590-e8ac-835e-fd385c181538\",\n          \"path\": \"string\"\n        }\n      }\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3e941114-6e1b-4517-8738-58812f92f44d",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v1",
+                    "content",
+                    "item"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "expand",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Defines the language to return. Use this when querying language variant content items.",
+                    "key": "Accept-Language",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Whether to request draft content.",
+                    "key": "Preview",
+                    "value": "<boolean>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "URL segment or GUID of a root content item.",
+                    "key": "Start-Item",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 5317,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0cc6dd42-a74e-4a9b-8f1a-0302ee43252a",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v1",
+                    "content",
+                    "item"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "expand",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Defines the language to return. Use this when querying language variant content items.",
+                    "key": "Accept-Language",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Whether to request draft content.",
+                    "key": "Preview",
+                    "value": "<boolean>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "URL segment or GUID of a root content item.",
+                    "key": "Start-Item",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 5317,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e1852b72-62d4-4c0f-ac47-0c0a92644ff8",
+          "name": "Get Content Item By Path",
+          "request": {
+            "name": "Get Content Item By Path",
+            "description": {},
+            "url": {
+              "path": [
+                "umbraco",
+                "delivery",
+                "api",
+                "v1",
+                "content",
+                "item",
+                ":path"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "expand",
+                  "value": "<string>",
+                  "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "path",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Defines the language to return. Use this when querying language variant content items.",
+                "key": "Accept-Language",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "API key specified through configuration to authorize access to the API.",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Whether to request draft content.",
+                "key": "Preview",
+                "value": "<boolean>"
+              },
+              {
+                "disabled": false,
+                "description": "URL segment or GUID of a root content item.",
+                "key": "Start-Item",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ba926bb7-2b8b-48a0-8723-2767924ee787",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v1",
+                    "content",
+                    "item",
+                    ":path"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "expand",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "path",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Defines the language to return. Use this when querying language variant content items.",
+                    "key": "Accept-Language",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Whether to request draft content.",
+                    "key": "Preview",
+                    "value": "<boolean>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "URL segment or GUID of a root content item.",
+                    "key": "Start-Item",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"22924d2b-cff6-50d3-8d0a-260a41db4d2b\",\n  \"contentType\": \"string\",\n  \"properties\": {\n    \"key_0\": {},\n    \"key_1\": {}\n  },\n  \"name\": \"string\",\n  \"createDate\": \"2010-12-20T07:07:51.876Z\",\n  \"updateDate\": \"1985-10-04T05:53:51.102Z\",\n  \"route\": {\n    \"path\": \"string\",\n    \"queryString\": \"string\",\n    \"startItem\": {\n      \"id\": \"36109292-5068-9ef0-b715-31120eac6f1d\",\n      \"path\": \"string\"\n    }\n  },\n  \"cultures\": {\n    \"key_0\": {\n      \"path\": \"string\",\n      \"queryString\": \"string\",\n      \"startItem\": {\n        \"id\": \"77da4ce5-4627-3ffa-d371-22c64702088c\",\n        \"path\": \"string\"\n      }\n    },\n    \"key_1\": {\n      \"path\": \"string\",\n      \"queryString\": \"string\",\n      \"startItem\": {\n        \"id\": \"49fff9a8-7ecf-e9af-fa36-ba2fbf25aa21\",\n        \"path\": \"string\"\n      }\n    },\n    \"key_2\": {\n      \"path\": \"string\",\n      \"queryString\": \"string\",\n      \"startItem\": {\n        \"id\": \"ae840aa4-dcb5-a3d5-80d4-febe7f20c3aa\",\n        \"path\": \"string\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6e1cdf1e-44dc-42cf-ac88-9070d6c1753e",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v1",
+                    "content",
+                    "item",
+                    ":path"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "expand",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "path",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Defines the language to return. Use this when querying language variant content items.",
+                    "key": "Accept-Language",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Whether to request draft content.",
+                    "key": "Preview",
+                    "value": "<boolean>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "URL segment or GUID of a root content item.",
+                    "key": "Start-Item",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 5317,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9378de10-43fd-43d4-9874-e20172095dbf",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v1",
+                    "content",
+                    "item",
+                    ":path"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "expand",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "path",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Defines the language to return. Use this when querying language variant content items.",
+                    "key": "Accept-Language",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Whether to request draft content.",
+                    "key": "Preview",
+                    "value": "<boolean>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "URL segment or GUID of a root content item.",
+                    "key": "Start-Item",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 5317,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "23a14c60-b20c-4d1c-8ede-9698324779f6",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v1",
+                    "content",
+                    "item",
+                    ":path"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "expand",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "path",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Defines the language to return. Use this when querying language variant content items.",
+                    "key": "Accept-Language",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Whether to request draft content.",
+                    "key": "Preview",
+                    "value": "<boolean>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "URL segment or GUID of a root content item.",
+                    "key": "Start-Item",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 5317,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a4b93d51-5110-433c-b1c2-2b806963d014",
+          "name": "Get Content Item By Path2.0",
+          "request": {
+            "name": "Get Content Item By Path2.0",
+            "description": {},
+            "url": {
+              "path": [
+                "umbraco",
+                "delivery",
+                "api",
+                "v2",
+                "content",
+                "item",
+                ":path"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "expand",
+                  "value": "<string>",
+                  "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Explicitly defines which properties should be included in the response (by default all properties are included). Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "path",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Defines the language to return. Use this when querying language variant content items.",
+                "key": "Accept-Language",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "API key specified through configuration to authorize access to the API.",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Whether to request draft content.",
+                "key": "Preview",
+                "value": "<boolean>"
+              },
+              {
+                "disabled": false,
+                "description": "URL segment or GUID of a root content item.",
+                "key": "Start-Item",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ae7ca978-a3a6-4444-87ba-589d071c240e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v2",
+                    "content",
+                    "item",
+                    ":path"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "expand",
+                      "value": ""
+                    },
+                    {
+                      "key": "fields",
+                      "value": "properties[$all]"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "path",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Defines the language to return. Use this when querying language variant content items.",
+                    "key": "Accept-Language",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Whether to request draft content.",
+                    "key": "Preview",
+                    "value": "<boolean>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "URL segment or GUID of a root content item.",
+                    "key": "Start-Item",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"22924d2b-cff6-50d3-8d0a-260a41db4d2b\",\n  \"contentType\": \"string\",\n  \"properties\": {\n    \"key_0\": {},\n    \"key_1\": {}\n  },\n  \"name\": \"string\",\n  \"createDate\": \"2010-12-20T07:07:51.876Z\",\n  \"updateDate\": \"1985-10-04T05:53:51.102Z\",\n  \"route\": {\n    \"path\": \"string\",\n    \"queryString\": \"string\",\n    \"startItem\": {\n      \"id\": \"36109292-5068-9ef0-b715-31120eac6f1d\",\n      \"path\": \"string\"\n    }\n  },\n  \"cultures\": {\n    \"key_0\": {\n      \"path\": \"string\",\n      \"queryString\": \"string\",\n      \"startItem\": {\n        \"id\": \"77da4ce5-4627-3ffa-d371-22c64702088c\",\n        \"path\": \"string\"\n      }\n    },\n    \"key_1\": {\n      \"path\": \"string\",\n      \"queryString\": \"string\",\n      \"startItem\": {\n        \"id\": \"49fff9a8-7ecf-e9af-fa36-ba2fbf25aa21\",\n        \"path\": \"string\"\n      }\n    },\n    \"key_2\": {\n      \"path\": \"string\",\n      \"queryString\": \"string\",\n      \"startItem\": {\n        \"id\": \"ae840aa4-dcb5-a3d5-80d4-febe7f20c3aa\",\n        \"path\": \"string\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0fbe3dac-cfdb-4207-b40e-a17663d33601",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v2",
+                    "content",
+                    "item",
+                    ":path"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "expand",
+                      "value": ""
+                    },
+                    {
+                      "key": "fields",
+                      "value": "properties[$all]"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "path",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Defines the language to return. Use this when querying language variant content items.",
+                    "key": "Accept-Language",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Whether to request draft content.",
+                    "key": "Preview",
+                    "value": "<boolean>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "URL segment or GUID of a root content item.",
+                    "key": "Start-Item",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 5317,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3764aa62-08cd-4f85-aa02-93c569847412",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v2",
+                    "content",
+                    "item",
+                    ":path"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "expand",
+                      "value": ""
+                    },
+                    {
+                      "key": "fields",
+                      "value": "properties[$all]"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "path",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Defines the language to return. Use this when querying language variant content items.",
+                    "key": "Accept-Language",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Whether to request draft content.",
+                    "key": "Preview",
+                    "value": "<boolean>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "URL segment or GUID of a root content item.",
+                    "key": "Start-Item",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 5317,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3ee8e898-3ec8-489b-b235-387432d07dcd",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v2",
+                    "content",
+                    "item",
+                    ":path"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "expand",
+                      "value": ""
+                    },
+                    {
+                      "key": "fields",
+                      "value": "properties[$all]"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "path",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Defines the language to return. Use this when querying language variant content items.",
+                    "key": "Accept-Language",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Whether to request draft content.",
+                    "key": "Preview",
+                    "value": "<boolean>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "URL segment or GUID of a root content item.",
+                    "key": "Start-Item",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 5317,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8cec1ee7-aef3-4a62-91a2-7d6579b0fe3c",
+          "name": "Get Content Item By Id",
+          "request": {
+            "name": "Get Content Item By Id",
+            "description": {},
+            "url": {
+              "path": [
+                "umbraco",
+                "delivery",
+                "api",
+                "v1",
+                "content",
+                "item",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "expand",
+                  "value": "<string>",
+                  "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Defines the language to return. Use this when querying language variant content items.",
+                "key": "Accept-Language",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "API key specified through configuration to authorize access to the API.",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Whether to request draft content.",
+                "key": "Preview",
+                "value": "<boolean>"
+              },
+              {
+                "disabled": false,
+                "description": "URL segment or GUID of a root content item.",
+                "key": "Start-Item",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8540ddc3-fd1e-4760-8771-73f4a051ea0f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v1",
+                    "content",
+                    "item",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "expand",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Defines the language to return. Use this when querying language variant content items.",
+                    "key": "Accept-Language",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Whether to request draft content.",
+                    "key": "Preview",
+                    "value": "<boolean>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "URL segment or GUID of a root content item.",
+                    "key": "Start-Item",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"22924d2b-cff6-50d3-8d0a-260a41db4d2b\",\n  \"contentType\": \"string\",\n  \"properties\": {\n    \"key_0\": {},\n    \"key_1\": {}\n  },\n  \"name\": \"string\",\n  \"createDate\": \"2010-12-20T07:07:51.876Z\",\n  \"updateDate\": \"1985-10-04T05:53:51.102Z\",\n  \"route\": {\n    \"path\": \"string\",\n    \"queryString\": \"string\",\n    \"startItem\": {\n      \"id\": \"36109292-5068-9ef0-b715-31120eac6f1d\",\n      \"path\": \"string\"\n    }\n  },\n  \"cultures\": {\n    \"key_0\": {\n      \"path\": \"string\",\n      \"queryString\": \"string\",\n      \"startItem\": {\n        \"id\": \"77da4ce5-4627-3ffa-d371-22c64702088c\",\n        \"path\": \"string\"\n      }\n    },\n    \"key_1\": {\n      \"path\": \"string\",\n      \"queryString\": \"string\",\n      \"startItem\": {\n        \"id\": \"49fff9a8-7ecf-e9af-fa36-ba2fbf25aa21\",\n        \"path\": \"string\"\n      }\n    },\n    \"key_2\": {\n      \"path\": \"string\",\n      \"queryString\": \"string\",\n      \"startItem\": {\n        \"id\": \"ae840aa4-dcb5-a3d5-80d4-febe7f20c3aa\",\n        \"path\": \"string\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e7d84676-2e5c-4c43-9462-2b107eedf299",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v1",
+                    "content",
+                    "item",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "expand",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Defines the language to return. Use this when querying language variant content items.",
+                    "key": "Accept-Language",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Whether to request draft content.",
+                    "key": "Preview",
+                    "value": "<boolean>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "URL segment or GUID of a root content item.",
+                    "key": "Start-Item",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 5317,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "521b42d7-3583-43aa-b391-866b1e7a7ce7",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v1",
+                    "content",
+                    "item",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "expand",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Defines the language to return. Use this when querying language variant content items.",
+                    "key": "Accept-Language",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Whether to request draft content.",
+                    "key": "Preview",
+                    "value": "<boolean>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "URL segment or GUID of a root content item.",
+                    "key": "Start-Item",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 5317,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "87064d8c-bae3-4569-8f32-7117c607b22b",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v1",
+                    "content",
+                    "item",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "expand",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Defines the language to return. Use this when querying language variant content items.",
+                    "key": "Accept-Language",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Whether to request draft content.",
+                    "key": "Preview",
+                    "value": "<boolean>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "URL segment or GUID of a root content item.",
+                    "key": "Start-Item",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 5317,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8eb796e6-8995-4737-b324-98cbae2134cc",
+          "name": "Get Content Item By Id2.0",
+          "request": {
+            "name": "Get Content Item By Id2.0",
+            "description": {},
+            "url": {
+              "path": [
+                "umbraco",
+                "delivery",
+                "api",
+                "v2",
+                "content",
+                "item",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "expand",
+                  "value": "<string>",
+                  "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Explicitly defines which properties should be included in the response (by default all properties are included). Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Defines the language to return. Use this when querying language variant content items.",
+                "key": "Accept-Language",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "API key specified through configuration to authorize access to the API.",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Whether to request draft content.",
+                "key": "Preview",
+                "value": "<boolean>"
+              },
+              {
+                "disabled": false,
+                "description": "URL segment or GUID of a root content item.",
+                "key": "Start-Item",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "61a187d4-e38d-4b43-bc34-328840c9a3a4",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v2",
+                    "content",
+                    "item",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "expand",
+                      "value": ""
+                    },
+                    {
+                      "key": "fields",
+                      "value": "properties[$all]"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Defines the language to return. Use this when querying language variant content items.",
+                    "key": "Accept-Language",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Whether to request draft content.",
+                    "key": "Preview",
+                    "value": "<boolean>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "URL segment or GUID of a root content item.",
+                    "key": "Start-Item",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"22924d2b-cff6-50d3-8d0a-260a41db4d2b\",\n  \"contentType\": \"string\",\n  \"properties\": {\n    \"key_0\": {},\n    \"key_1\": {}\n  },\n  \"name\": \"string\",\n  \"createDate\": \"2010-12-20T07:07:51.876Z\",\n  \"updateDate\": \"1985-10-04T05:53:51.102Z\",\n  \"route\": {\n    \"path\": \"string\",\n    \"queryString\": \"string\",\n    \"startItem\": {\n      \"id\": \"36109292-5068-9ef0-b715-31120eac6f1d\",\n      \"path\": \"string\"\n    }\n  },\n  \"cultures\": {\n    \"key_0\": {\n      \"path\": \"string\",\n      \"queryString\": \"string\",\n      \"startItem\": {\n        \"id\": \"77da4ce5-4627-3ffa-d371-22c64702088c\",\n        \"path\": \"string\"\n      }\n    },\n    \"key_1\": {\n      \"path\": \"string\",\n      \"queryString\": \"string\",\n      \"startItem\": {\n        \"id\": \"49fff9a8-7ecf-e9af-fa36-ba2fbf25aa21\",\n        \"path\": \"string\"\n      }\n    },\n    \"key_2\": {\n      \"path\": \"string\",\n      \"queryString\": \"string\",\n      \"startItem\": {\n        \"id\": \"ae840aa4-dcb5-a3d5-80d4-febe7f20c3aa\",\n        \"path\": \"string\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "27e61305-64ff-44cb-ba65-487143f99a6b",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v2",
+                    "content",
+                    "item",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "expand",
+                      "value": ""
+                    },
+                    {
+                      "key": "fields",
+                      "value": "properties[$all]"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Defines the language to return. Use this when querying language variant content items.",
+                    "key": "Accept-Language",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Whether to request draft content.",
+                    "key": "Preview",
+                    "value": "<boolean>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "URL segment or GUID of a root content item.",
+                    "key": "Start-Item",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 5317,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b972dd0f-6823-43cf-a95b-e9b2c930b04c",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v2",
+                    "content",
+                    "item",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "expand",
+                      "value": ""
+                    },
+                    {
+                      "key": "fields",
+                      "value": "properties[$all]"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Defines the language to return. Use this when querying language variant content items.",
+                    "key": "Accept-Language",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Whether to request draft content.",
+                    "key": "Preview",
+                    "value": "<boolean>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "URL segment or GUID of a root content item.",
+                    "key": "Start-Item",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 5317,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d545f792-e9d4-43f7-b8d4-731895d1a8ab",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v2",
+                    "content",
+                    "item",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "expand",
+                      "value": ""
+                    },
+                    {
+                      "key": "fields",
+                      "value": "properties[$all]"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Defines the language to return. Use this when querying language variant content items.",
+                    "key": "Accept-Language",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Whether to request draft content.",
+                    "key": "Preview",
+                    "value": "<boolean>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "URL segment or GUID of a root content item.",
+                    "key": "Start-Item",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 5317,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ab20fa26-74c4-4382-8491-2dcd8874bc14",
+          "name": "Get Content Items2.0",
+          "request": {
+            "name": "Get Content Items2.0",
+            "description": {},
+            "url": {
+              "path": [
+                "umbraco",
+                "delivery",
+                "api",
+                "v2",
+                "content",
+                "items"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "expand",
+                  "value": "<string>",
+                  "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Explicitly defines which properties should be included in the response (by default all properties are included). Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api#query-parameters) for more details on this."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Defines the language to return. Use this when querying language variant content items.",
+                "key": "Accept-Language",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "API key specified through configuration to authorize access to the API.",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Whether to request draft content.",
+                "key": "Preview",
+                "value": "<boolean>"
+              },
+              {
+                "disabled": false,
+                "description": "URL segment or GUID of a root content item.",
+                "key": "Start-Item",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c7ec776a-aebc-4b0a-805b-36ae5d718fca",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v2",
+                    "content",
+                    "items"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "expand",
+                      "value": ""
+                    },
+                    {
+                      "key": "fields",
+                      "value": "properties[$all]"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Defines the language to return. Use this when querying language variant content items.",
+                    "key": "Accept-Language",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Whether to request draft content.",
+                    "key": "Preview",
+                    "value": "<boolean>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "URL segment or GUID of a root content item.",
+                    "key": "Start-Item",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"83386707-7b20-25f3-3bf1-be38a52d403a\",\n    \"contentType\": \"string\",\n    \"properties\": {\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {},\n      \"key_3\": {}\n    },\n    \"name\": \"string\",\n    \"createDate\": \"1964-03-30T21:30:10.298Z\",\n    \"updateDate\": \"1964-11-09T14:18:22.454Z\",\n    \"route\": {\n      \"path\": \"string\",\n      \"queryString\": \"string\",\n      \"startItem\": {\n        \"id\": \"656ecde5-05de-b21f-f7ad-23a417e99d3c\",\n        \"path\": \"string\"\n      }\n    },\n    \"cultures\": {\n      \"key_0\": {\n        \"path\": \"string\",\n        \"queryString\": \"string\",\n        \"startItem\": {\n          \"id\": \"5bde74d5-2d23-7f6a-a59e-6262845f5c57\",\n          \"path\": \"string\"\n        }\n      },\n      \"key_1\": {\n        \"path\": \"string\",\n        \"queryString\": \"string\",\n        \"startItem\": {\n          \"id\": \"2ac9cce1-3506-4ca3-124f-ffedcb2552c4\",\n          \"path\": \"string\"\n        }\n      },\n      \"key_2\": {\n        \"path\": \"string\",\n        \"queryString\": \"string\",\n        \"startItem\": {\n          \"id\": \"71a5e4fc-e609-d142-9c1c-715d9af82a3a\",\n          \"path\": \"string\"\n        }\n      },\n      \"key_3\": {\n        \"path\": \"string\",\n        \"queryString\": \"string\",\n        \"startItem\": {\n          \"id\": \"312c5932-b0a9-468b-d5d0-c3f2f83fb809\",\n          \"path\": \"string\"\n        }\n      }\n    }\n  },\n  {\n    \"id\": \"28d43773-addf-0b68-9a75-605cc818d3fa\",\n    \"contentType\": \"string\",\n    \"properties\": {\n      \"key_0\": {}\n    },\n    \"name\": \"string\",\n    \"createDate\": \"2004-01-22T23:43:19.731Z\",\n    \"updateDate\": \"2000-03-20T08:37:05.218Z\",\n    \"route\": {\n      \"path\": \"string\",\n      \"queryString\": \"string\",\n      \"startItem\": {\n        \"id\": \"22d17a2b-041b-9259-6bf1-e09954b9fa1b\",\n        \"path\": \"string\"\n      }\n    },\n    \"cultures\": {\n      \"key_0\": {\n        \"path\": \"string\",\n        \"queryString\": \"string\",\n        \"startItem\": {\n          \"id\": \"cd915023-d649-35f0-c595-20ba351db9d7\",\n          \"path\": \"string\"\n        }\n      },\n      \"key_1\": {\n        \"path\": \"string\",\n        \"queryString\": \"string\",\n        \"startItem\": {\n          \"id\": \"fbacbbc8-9590-e8ac-835e-fd385c181538\",\n          \"path\": \"string\"\n        }\n      }\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c3ca521d-bf28-4674-a6e1-d6e31fdd720b",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v2",
+                    "content",
+                    "items"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "expand",
+                      "value": ""
+                    },
+                    {
+                      "key": "fields",
+                      "value": "properties[$all]"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Defines the language to return. Use this when querying language variant content items.",
+                    "key": "Accept-Language",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Whether to request draft content.",
+                    "key": "Preview",
+                    "value": "<boolean>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "URL segment or GUID of a root content item.",
+                    "key": "Start-Item",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 5317,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c30dcaa9-d60a-42b7-943d-9996804f7fb9",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v2",
+                    "content",
+                    "items"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "expand",
+                      "value": ""
+                    },
+                    {
+                      "key": "fields",
+                      "value": "properties[$all]"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Defines the language to return. Use this when querying language variant content items.",
+                    "key": "Accept-Language",
+                    "value": ""
+                  },
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Whether to request draft content.",
+                    "key": "Preview",
+                    "value": "<boolean>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "URL segment or GUID of a root content item.",
+                    "key": "Start-Item",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 5317,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "58df5eea-f7eb-492d-b37d-647d6a4af276",
+      "name": "Media",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5f06d145-0465-4057-87ad-bf1dc0537e7f",
+          "name": "Get Media",
+          "request": {
+            "name": "Get Media",
+            "description": {},
+            "url": {
+              "path": [
+                "umbraco",
+                "delivery",
+                "api",
+                "v1",
+                "media"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fetch",
+                  "value": "<string>",
+                  "description": "Specifies the media items to fetch. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Defines how to filter the fetched media items. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Defines how to filter the fetched media items. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>",
+                  "description": "Defines how to sort the found media items. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>",
+                  "description": "Defines how to sort the found media items. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+                },
+                {
+                  "disabled": false,
+                  "key": "skip",
+                  "value": "0",
+                  "description": "Specifies the number of found media items to skip. Use this to control pagination of the response."
+                },
+                {
+                  "disabled": false,
+                  "key": "take",
+                  "value": "10",
+                  "description": "Specifies the number of found media items to take. Use this to control pagination of the response."
+                },
+                {
+                  "disabled": false,
+                  "key": "expand",
+                  "value": "<string>",
+                  "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "API key specified through configuration to authorize access to the API.",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6b5ece10-de90-449a-bf5e-feb89f85980b",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v1",
+                    "media"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fetch",
+                      "value": "children:/"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    },
+                    {
+                      "key": "expand",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"id\": \"ae1f56aa-e94f-0746-303c-992ca45e4578\",\n      \"name\": \"string\",\n      \"mediaType\": \"string\",\n      \"url\": \"string\",\n      \"extension\": \"string\",\n      \"width\": 819,\n      \"height\": 2353,\n      \"bytes\": 7153,\n      \"properties\": {\n        \"key_0\": {},\n        \"key_1\": {}\n      },\n      \"focalPoint\": {\n        \"left\": 9474.514139620647,\n        \"top\": 4452.418629729863\n      },\n      \"crops\": [\n        {\n          \"alias\": \"string\",\n          \"width\": 168,\n          \"height\": 6118,\n          \"coordinates\": {\n            \"x1\": 8788.008461978003,\n            \"y1\": 3684.8768877021944,\n            \"x2\": 9088.189756315918,\n            \"y2\": 8783.628550353409\n          }\n        },\n        {\n          \"alias\": \"string\",\n          \"width\": 2961,\n          \"height\": 6787,\n          \"coordinates\": {\n            \"x1\": 4951.618687595614,\n            \"y1\": 6319.589216221515,\n            \"x2\": 1396.9253511754298,\n            \"y2\": 4367.049481072595\n          }\n        }\n      ],\n      \"path\": \"string\",\n      \"createDate\": \"1995-03-07T00:45:30.722Z\",\n      \"updateDate\": \"1969-03-21T09:32:38.390Z\"\n    },\n    {\n      \"id\": \"eb8c4487-7746-6f78-f520-d559824c2fe1\",\n      \"name\": \"string\",\n      \"mediaType\": \"string\",\n      \"url\": \"string\",\n      \"extension\": \"string\",\n      \"width\": 4960,\n      \"height\": 9840,\n      \"bytes\": 4740,\n      \"properties\": {\n        \"key_0\": {}\n      },\n      \"focalPoint\": {\n        \"left\": 6581.807545028082,\n        \"top\": 6124.666909170034\n      },\n      \"crops\": [\n        {\n          \"alias\": \"string\",\n          \"width\": 9223,\n          \"height\": 5944,\n          \"coordinates\": {\n            \"x1\": 8833.719921436528,\n            \"y1\": 5356.431249288715,\n            \"x2\": 6899.597678725961,\n            \"y2\": 6941.056621727888\n          }\n        },\n        {\n          \"alias\": \"string\",\n          \"width\": 5734,\n          \"height\": 1033,\n          \"coordinates\": {\n            \"x1\": 1202.429588780286,\n            \"y1\": 4696.729943002618,\n            \"x2\": 3603.1153915342306,\n            \"y2\": 8884.841004070178\n          }\n        }\n      ],\n      \"path\": \"string\",\n      \"createDate\": \"1997-01-10T03:31:50.679Z\",\n      \"updateDate\": \"1994-12-21T20:43:47.391Z\"\n    }\n  ],\n  \"total\": 5874\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0c11aae2-001c-46f9-99bb-1a649da04581",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v1",
+                    "media"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fetch",
+                      "value": "children:/"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    },
+                    {
+                      "key": "expand",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 5317,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a42e0872-b468-42c8-a4dc-94e11cd01f23",
+          "name": "Get Media2.0",
+          "request": {
+            "name": "Get Media2.0",
+            "description": {},
+            "url": {
+              "path": [
+                "umbraco",
+                "delivery",
+                "api",
+                "v2",
+                "media"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fetch",
+                  "value": "<string>",
+                  "description": "Specifies the media items to fetch. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Defines how to filter the fetched media items. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Defines how to filter the fetched media items. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>",
+                  "description": "Defines how to sort the found media items. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>",
+                  "description": "Defines how to sort the found media items. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+                },
+                {
+                  "disabled": false,
+                  "key": "skip",
+                  "value": "0",
+                  "description": "Specifies the number of found media items to skip. Use this to control pagination of the response."
+                },
+                {
+                  "disabled": false,
+                  "key": "take",
+                  "value": "10",
+                  "description": "Specifies the number of found media items to take. Use this to control pagination of the response."
+                },
+                {
+                  "disabled": false,
+                  "key": "expand",
+                  "value": "<string>",
+                  "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Explicitly defines which properties should be included in the response (by default all properties are included). Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "API key specified through configuration to authorize access to the API.",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "15692de1-b30c-49d0-8e86-24f73902c52f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v2",
+                    "media"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fetch",
+                      "value": "children:/"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    },
+                    {
+                      "key": "expand",
+                      "value": ""
+                    },
+                    {
+                      "key": "fields",
+                      "value": "properties[$all]"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"id\": \"ca44c8ec-308d-a07a-ed1a-85a38cd4bee2\",\n      \"name\": \"string\",\n      \"mediaType\": \"string\",\n      \"url\": \"string\",\n      \"extension\": \"string\",\n      \"width\": 6101,\n      \"height\": 1467,\n      \"bytes\": 5502,\n      \"properties\": {\n        \"key_0\": {},\n        \"key_1\": {},\n        \"key_2\": {}\n      },\n      \"focalPoint\": {\n        \"left\": 3129.4557236345986,\n        \"top\": 2213.533934864781\n      },\n      \"crops\": [\n        {\n          \"alias\": \"string\",\n          \"width\": 6121,\n          \"height\": 1496,\n          \"coordinates\": {\n            \"x1\": 9311.436664310246,\n            \"y1\": 271.4209788537059,\n            \"x2\": 3361.734909151229,\n            \"y2\": 4907.439909523481\n          }\n        },\n        {\n          \"alias\": \"string\",\n          \"width\": 4,\n          \"height\": 8195,\n          \"coordinates\": {\n            \"x1\": 8264.96767987383,\n            \"y1\": 7425.4705863794,\n            \"x2\": 5051.381830400846,\n            \"y2\": 3809.2846850042115\n          }\n        }\n      ],\n      \"path\": \"string\",\n      \"createDate\": \"2001-01-17T03:16:39.171Z\",\n      \"updateDate\": \"1957-11-03T21:25:36.000Z\"\n    },\n    {\n      \"id\": \"ace382eb-d7e2-eeb3-f627-ec749c8e7db1\",\n      \"name\": \"string\",\n      \"mediaType\": \"string\",\n      \"url\": \"string\",\n      \"extension\": \"string\",\n      \"width\": 9346,\n      \"height\": 9870,\n      \"bytes\": 5124,\n      \"properties\": {\n        \"key_0\": {},\n        \"key_1\": {},\n        \"key_2\": {}\n      },\n      \"focalPoint\": {\n        \"left\": 9787.792849359383,\n        \"top\": 206.58633285292828\n      },\n      \"crops\": [\n        {\n          \"alias\": \"string\",\n          \"width\": 8703,\n          \"height\": 2346,\n          \"coordinates\": {\n            \"x1\": 8672.787003349646,\n            \"y1\": 7120.349910913677,\n            \"x2\": 352.1764342335665,\n            \"y2\": 3233.7880222469794\n          }\n        },\n        {\n          \"alias\": \"string\",\n          \"width\": 7697,\n          \"height\": 4276,\n          \"coordinates\": {\n            \"x1\": 7036.276140350971,\n            \"y1\": 7845.810021913083,\n            \"x2\": 224.5080331802729,\n            \"y2\": 2678.128919676389\n          }\n        }\n      ],\n      \"path\": \"string\",\n      \"createDate\": \"1957-02-25T07:31:58.217Z\",\n      \"updateDate\": \"2017-09-26T12:11:00.066Z\"\n    }\n  ],\n  \"total\": 3528\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fdbe9eb7-cebb-4505-811d-3c806be8f608",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v2",
+                    "media"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fetch",
+                      "value": "children:/"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    },
+                    {
+                      "key": "expand",
+                      "value": ""
+                    },
+                    {
+                      "key": "fields",
+                      "value": "properties[$all]"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 5317,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "19e28014-40dd-453e-87a7-596930d40179",
+          "name": "Get Media Item",
+          "request": {
+            "name": "Get Media Item",
+            "description": {},
+            "url": {
+              "path": [
+                "umbraco",
+                "delivery",
+                "api",
+                "v1",
+                "media",
+                "item"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "expand",
+                  "value": "<string>",
+                  "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "API key specified through configuration to authorize access to the API.",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9e51263a-ef84-45f8-88d2-419d8f338abe",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v1",
+                    "media",
+                    "item"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "expand",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"cd38a201-b2c8-f925-34b0-5b3833097a13\",\n    \"name\": \"string\",\n    \"mediaType\": \"string\",\n    \"url\": \"string\",\n    \"extension\": \"string\",\n    \"width\": 1971,\n    \"height\": 1869,\n    \"bytes\": 6589,\n    \"properties\": {\n      \"key_0\": {},\n      \"key_1\": {}\n    },\n    \"focalPoint\": {\n      \"left\": 3583.0950713100783,\n      \"top\": 3125.1122200177792\n    },\n    \"crops\": [\n      {\n        \"alias\": \"string\",\n        \"width\": 9980,\n        \"height\": 3585,\n        \"coordinates\": {\n          \"x1\": 6153.3922171520135,\n          \"y1\": 1559.8204891465227,\n          \"x2\": 6507.7519575144215,\n          \"y2\": 3345.75836247309\n        }\n      },\n      {\n        \"alias\": \"string\",\n        \"width\": 9745,\n        \"height\": 8325,\n        \"coordinates\": {\n          \"x1\": 45.05501348101792,\n          \"y1\": 7099.296986456137,\n          \"x2\": 8357.994948393221,\n          \"y2\": 1821.8515742169195\n        }\n      }\n    ],\n    \"path\": \"string\",\n    \"createDate\": \"1964-10-19T04:48:59.903Z\",\n    \"updateDate\": \"2015-11-29T10:51:11.267Z\"\n  },\n  {\n    \"id\": \"8db4b80d-309b-2b32-ef16-b4fd42a5094a\",\n    \"name\": \"string\",\n    \"mediaType\": \"string\",\n    \"url\": \"string\",\n    \"extension\": \"string\",\n    \"width\": 9145,\n    \"height\": 3411,\n    \"bytes\": 4652,\n    \"properties\": {\n      \"key_0\": {}\n    },\n    \"focalPoint\": {\n      \"left\": 9994.079442955686,\n      \"top\": 6987.173105285915\n    },\n    \"crops\": [\n      {\n        \"alias\": \"string\",\n        \"width\": 1231,\n        \"height\": 2263,\n        \"coordinates\": {\n          \"x1\": 4736.935925839852,\n          \"y1\": 3758.503821132512,\n          \"x2\": 8943.628736827293,\n          \"y2\": 8025.694251080632\n        }\n      },\n      {\n        \"alias\": \"string\",\n        \"width\": 3330,\n        \"height\": 480,\n        \"coordinates\": {\n          \"x1\": 5613.163327646193,\n          \"y1\": 6895.159939840944,\n          \"x2\": 1402.1701109939888,\n          \"y2\": 8587.463221526341\n        }\n      }\n    ],\n    \"path\": \"string\",\n    \"createDate\": \"1979-08-15T09:27:37.809Z\",\n    \"updateDate\": \"1993-10-12T13:00:07.295Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7064967b-e6c2-4d02-bb1b-a7050711e2f6",
+          "name": "Get Media Item By Path",
+          "request": {
+            "name": "Get Media Item By Path",
+            "description": {},
+            "url": {
+              "path": [
+                "umbraco",
+                "delivery",
+                "api",
+                "v1",
+                "media",
+                "item",
+                ":path"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "expand",
+                  "value": "<string>",
+                  "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "path",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "API key specified through configuration to authorize access to the API.",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "af6b0577-5631-4b60-8d86-06981a97cc22",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v1",
+                    "media",
+                    "item",
+                    ":path"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "expand",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "path",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"72ec2198-3f5d-89e5-ddd9-7fdbdb5921c9\",\n  \"name\": \"string\",\n  \"mediaType\": \"string\",\n  \"url\": \"string\",\n  \"extension\": \"string\",\n  \"width\": 7690,\n  \"height\": 8684,\n  \"bytes\": 589,\n  \"properties\": {\n    \"key_0\": {}\n  },\n  \"focalPoint\": {\n    \"left\": 9741.926892529744,\n    \"top\": 2232.1518030468346\n  },\n  \"crops\": [\n    {\n      \"alias\": \"string\",\n      \"width\": 9058,\n      \"height\": 3466,\n      \"coordinates\": {\n        \"x1\": 5660.127419986956,\n        \"y1\": 648.3500667101849,\n        \"x2\": 9420.171005086926,\n        \"y2\": 4725.284285488527\n      }\n    },\n    {\n      \"alias\": \"string\",\n      \"width\": 8275,\n      \"height\": 7255,\n      \"coordinates\": {\n        \"x1\": 8974.3404813089,\n        \"y1\": 6212.6717387425415,\n        \"x2\": 733.1710516704748,\n        \"y2\": 7042.6138780482925\n      }\n    }\n  ],\n  \"path\": \"string\",\n  \"createDate\": \"1955-02-03T22:13:26.818Z\",\n  \"updateDate\": \"1997-02-12T11:04:11.081Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5c33f7b5-5d05-4d01-9fb9-4487e687bb69",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v1",
+                    "media",
+                    "item",
+                    ":path"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "expand",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "path",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 5317,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ec8f0713-56c3-4eef-a58d-8a98c98d53d3",
+          "name": "Get Media Item By Path2.0",
+          "request": {
+            "name": "Get Media Item By Path2.0",
+            "description": {},
+            "url": {
+              "path": [
+                "umbraco",
+                "delivery",
+                "api",
+                "v2",
+                "media",
+                "item",
+                ":path"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "expand",
+                  "value": "<string>",
+                  "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Explicitly defines which properties should be included in the response (by default all properties are included). Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "path",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "API key specified through configuration to authorize access to the API.",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f9075b6f-9fdf-4f5c-ba32-a5adb0b99577",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v2",
+                    "media",
+                    "item",
+                    ":path"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "expand",
+                      "value": ""
+                    },
+                    {
+                      "key": "fields",
+                      "value": "properties[$all]"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "path",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"72ec2198-3f5d-89e5-ddd9-7fdbdb5921c9\",\n  \"name\": \"string\",\n  \"mediaType\": \"string\",\n  \"url\": \"string\",\n  \"extension\": \"string\",\n  \"width\": 7690,\n  \"height\": 8684,\n  \"bytes\": 589,\n  \"properties\": {\n    \"key_0\": {}\n  },\n  \"focalPoint\": {\n    \"left\": 9741.926892529744,\n    \"top\": 2232.1518030468346\n  },\n  \"crops\": [\n    {\n      \"alias\": \"string\",\n      \"width\": 9058,\n      \"height\": 3466,\n      \"coordinates\": {\n        \"x1\": 5660.127419986956,\n        \"y1\": 648.3500667101849,\n        \"x2\": 9420.171005086926,\n        \"y2\": 4725.284285488527\n      }\n    },\n    {\n      \"alias\": \"string\",\n      \"width\": 8275,\n      \"height\": 7255,\n      \"coordinates\": {\n        \"x1\": 8974.3404813089,\n        \"y1\": 6212.6717387425415,\n        \"x2\": 733.1710516704748,\n        \"y2\": 7042.6138780482925\n      }\n    }\n  ],\n  \"path\": \"string\",\n  \"createDate\": \"1955-02-03T22:13:26.818Z\",\n  \"updateDate\": \"1997-02-12T11:04:11.081Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3c4507a6-d66c-401c-bd12-41e9ea085f93",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v2",
+                    "media",
+                    "item",
+                    ":path"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "expand",
+                      "value": ""
+                    },
+                    {
+                      "key": "fields",
+                      "value": "properties[$all]"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "path",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 5317,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a77f5c19-ceab-4da9-8f1a-717c69547175",
+          "name": "Get Media Item By Id",
+          "request": {
+            "name": "Get Media Item By Id",
+            "description": {},
+            "url": {
+              "path": [
+                "umbraco",
+                "delivery",
+                "api",
+                "v1",
+                "media",
+                "item",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "expand",
+                  "value": "<string>",
+                  "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "API key specified through configuration to authorize access to the API.",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "af5fc271-9c00-4fff-93df-2927202b6153",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v1",
+                    "media",
+                    "item",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "expand",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"72ec2198-3f5d-89e5-ddd9-7fdbdb5921c9\",\n  \"name\": \"string\",\n  \"mediaType\": \"string\",\n  \"url\": \"string\",\n  \"extension\": \"string\",\n  \"width\": 7690,\n  \"height\": 8684,\n  \"bytes\": 589,\n  \"properties\": {\n    \"key_0\": {}\n  },\n  \"focalPoint\": {\n    \"left\": 9741.926892529744,\n    \"top\": 2232.1518030468346\n  },\n  \"crops\": [\n    {\n      \"alias\": \"string\",\n      \"width\": 9058,\n      \"height\": 3466,\n      \"coordinates\": {\n        \"x1\": 5660.127419986956,\n        \"y1\": 648.3500667101849,\n        \"x2\": 9420.171005086926,\n        \"y2\": 4725.284285488527\n      }\n    },\n    {\n      \"alias\": \"string\",\n      \"width\": 8275,\n      \"height\": 7255,\n      \"coordinates\": {\n        \"x1\": 8974.3404813089,\n        \"y1\": 6212.6717387425415,\n        \"x2\": 733.1710516704748,\n        \"y2\": 7042.6138780482925\n      }\n    }\n  ],\n  \"path\": \"string\",\n  \"createDate\": \"1955-02-03T22:13:26.818Z\",\n  \"updateDate\": \"1997-02-12T11:04:11.081Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9c9f92de-1440-424d-be3f-051bae4102cd",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v1",
+                    "media",
+                    "item",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "expand",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 5317,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aa647432-fd9b-415e-a1f7-f30c64fb0898",
+          "name": "Get Media Item By Id2.0",
+          "request": {
+            "name": "Get Media Item By Id2.0",
+            "description": {},
+            "url": {
+              "path": [
+                "umbraco",
+                "delivery",
+                "api",
+                "v2",
+                "media",
+                "item",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "expand",
+                  "value": "<string>",
+                  "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Explicitly defines which properties should be included in the response (by default all properties are included). Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "API key specified through configuration to authorize access to the API.",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "95a392c8-604c-4531-8a44-d0751ba95d0d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v2",
+                    "media",
+                    "item",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "expand",
+                      "value": ""
+                    },
+                    {
+                      "key": "fields",
+                      "value": "properties[$all]"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"72ec2198-3f5d-89e5-ddd9-7fdbdb5921c9\",\n  \"name\": \"string\",\n  \"mediaType\": \"string\",\n  \"url\": \"string\",\n  \"extension\": \"string\",\n  \"width\": 7690,\n  \"height\": 8684,\n  \"bytes\": 589,\n  \"properties\": {\n    \"key_0\": {}\n  },\n  \"focalPoint\": {\n    \"left\": 9741.926892529744,\n    \"top\": 2232.1518030468346\n  },\n  \"crops\": [\n    {\n      \"alias\": \"string\",\n      \"width\": 9058,\n      \"height\": 3466,\n      \"coordinates\": {\n        \"x1\": 5660.127419986956,\n        \"y1\": 648.3500667101849,\n        \"x2\": 9420.171005086926,\n        \"y2\": 4725.284285488527\n      }\n    },\n    {\n      \"alias\": \"string\",\n      \"width\": 8275,\n      \"height\": 7255,\n      \"coordinates\": {\n        \"x1\": 8974.3404813089,\n        \"y1\": 6212.6717387425415,\n        \"x2\": 733.1710516704748,\n        \"y2\": 7042.6138780482925\n      }\n    }\n  ],\n  \"path\": \"string\",\n  \"createDate\": \"1955-02-03T22:13:26.818Z\",\n  \"updateDate\": \"1997-02-12T11:04:11.081Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3f4991a9-ec30-4073-868a-0e6bcd255451",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v2",
+                    "media",
+                    "item",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "expand",
+                      "value": ""
+                    },
+                    {
+                      "key": "fields",
+                      "value": "properties[$all]"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 5317,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a21ac366-be40-4870-8d98-2663b7b5e2fc",
+          "name": "Get Media Items2.0",
+          "request": {
+            "name": "Get Media Items2.0",
+            "description": {},
+            "url": {
+              "path": [
+                "umbraco",
+                "delivery",
+                "api",
+                "v2",
+                "media",
+                "items"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "expand",
+                  "value": "<string>",
+                  "description": "Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Explicitly defines which properties should be included in the response (by default all properties are included). Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "API key specified through configuration to authorize access to the API.",
+                "key": "Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e87adf95-d9f1-4419-b619-540827d2bbe1",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "umbraco",
+                    "delivery",
+                    "api",
+                    "v2",
+                    "media",
+                    "items"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "expand",
+                      "value": ""
+                    },
+                    {
+                      "key": "fields",
+                      "value": "properties[$all]"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "API key specified through configuration to authorize access to the API.",
+                    "key": "Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"cd38a201-b2c8-f925-34b0-5b3833097a13\",\n    \"name\": \"string\",\n    \"mediaType\": \"string\",\n    \"url\": \"string\",\n    \"extension\": \"string\",\n    \"width\": 1971,\n    \"height\": 1869,\n    \"bytes\": 6589,\n    \"properties\": {\n      \"key_0\": {},\n      \"key_1\": {}\n    },\n    \"focalPoint\": {\n      \"left\": 3583.0950713100783,\n      \"top\": 3125.1122200177792\n    },\n    \"crops\": [\n      {\n        \"alias\": \"string\",\n        \"width\": 9980,\n        \"height\": 3585,\n        \"coordinates\": {\n          \"x1\": 6153.3922171520135,\n          \"y1\": 1559.8204891465227,\n          \"x2\": 6507.7519575144215,\n          \"y2\": 3345.75836247309\n        }\n      },\n      {\n        \"alias\": \"string\",\n        \"width\": 9745,\n        \"height\": 8325,\n        \"coordinates\": {\n          \"x1\": 45.05501348101792,\n          \"y1\": 7099.296986456137,\n          \"x2\": 8357.994948393221,\n          \"y2\": 1821.8515742169195\n        }\n      }\n    ],\n    \"path\": \"string\",\n    \"createDate\": \"1964-10-19T04:48:59.903Z\",\n    \"updateDate\": \"2015-11-29T10:51:11.267Z\"\n  },\n  {\n    \"id\": \"8db4b80d-309b-2b32-ef16-b4fd42a5094a\",\n    \"name\": \"string\",\n    \"mediaType\": \"string\",\n    \"url\": \"string\",\n    \"extension\": \"string\",\n    \"width\": 9145,\n    \"height\": 3411,\n    \"bytes\": 4652,\n    \"properties\": {\n      \"key_0\": {}\n    },\n    \"focalPoint\": {\n      \"left\": 9994.079442955686,\n      \"top\": 6987.173105285915\n    },\n    \"crops\": [\n      {\n        \"alias\": \"string\",\n        \"width\": 1231,\n        \"height\": 2263,\n        \"coordinates\": {\n          \"x1\": 4736.935925839852,\n          \"y1\": 3758.503821132512,\n          \"x2\": 8943.628736827293,\n          \"y2\": 8025.694251080632\n        }\n      },\n      {\n        \"alias\": \"string\",\n        \"width\": 3330,\n        \"height\": 480,\n        \"coordinates\": {\n          \"x1\": 5613.163327646193,\n          \"y1\": 6895.159939840944,\n          \"x2\": 1402.1701109939888,\n          \"y2\": 8587.463221526341\n        }\n      }\n    ],\n    \"path\": \"string\",\n    \"createDate\": \"1979-08-15T09:27:37.809Z\",\n    \"updateDate\": \"1993-10-12T13:00:07.295Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e54b374a-87d6-4819-9670-e355cdaf8e72",
+    "name": "Umbraco Delivery API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "You can find out more about the Umbraco Delivery API in [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).",
+      "type": "text/plain"
+    }
+  }
+}
