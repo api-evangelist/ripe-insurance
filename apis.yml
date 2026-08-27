@@ -49,72 +49,59 @@ created: '2026-07-25'
 modified: '2026-07-25'
 specificationVersion: '0.23'
 apis:
-- aid: ripe-insurance:ripe-insurance-umbraco-content-delivery-api
-  name: Ripe Insurance Umbraco Content Delivery API
-  description: The read-only Umbraco CMS Content Delivery API served anonymously from
-    the Ripe Insurance marketing and quote site. This is platform infrastructure that
-    ships with Umbraco, not an insurance product API — it exposes eight GET operations
-    over website content and media items and contains no quote, bind, issue, policy,
-    billing, or FNOL capability. Confirmed live and parsing as OpenAPI 3.0.4 on 2026-07-25,
-    with an equivalent surface present on cycleplan.co.uk, golfcare.co.uk and
-    insure4sport.co.uk. Ripe does not document or promote this as a developer offering
-    and robots.txt disallows /umbraco/. Recorded because it is real and publicly
-    reachable, not because it constitutes an insurance API.
+- aid: ripe-insurance:ripe-insurance-content-api
+  name: Ripe Insurance Content API
+  description: The Content API from Ripe Insurance — 8 operation(s) for content.
   humanURL: https://www.ripeinsurance.co.uk/umbraco/swagger/index.html
   baseURL: https://www.ripeinsurance.co.uk/umbraco/delivery/api/v2
   tags:
   - Content
-  - Media
-  - CMS
-  - Umbraco
   properties:
   - type: OpenAPI
-    url: openapi/ripe-insurance-umbraco-content-delivery-openapi.json
+    url: openapi/ripe-insurance-content-api-openapi.yml
   - type: APIReference
     url: https://www.ripeinsurance.co.uk/umbraco/swagger/index.html
   - type: Documentation
     url: https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api
-  - type: Overlay
-    url: overlays/ripe-insurance-umbraco-content-delivery-overlay.yaml
-  - type: MCPServer
-    url: mcp/ripe-insurance-mcp.yml
   - type: ToolCrosswalk
     url: mcp/ripe-insurance-tool-crosswalk.yml
   - type: DataModel
     url: data-model/ripe-insurance-data-model.yml
   - type: ErrorCatalog
     url: errors/ripe-insurance-problem-types.yml
-- aid: ripe-insurance:ripe-insurance-cycleplan-content-delivery-api
-  name: Cycleplan Umbraco Content Delivery API
-  description: The read-only Umbraco CMS Content Delivery API served anonymously from
-    cycleplan.co.uk, the Ripe Insurance bike-insurance brand. Same platform infrastructure
-    as the flagship site but running one CMS version behind, so it still exposes the eight
-    legacy v1 operations alongside the eight v2 ones — sixteen GET operations over website
-    content and media. Harvested verbatim and confirmed parsing as OpenAPI 3.0.1 on
-    2026-07-25. Not an insurance API — it carries no quote, bind, issue, policy, billing
-    or FNOL capability, and it is unrelated to the Cycleplan ChatGPT app Ripe launched in
-    April 2026, which publishes no API. An equivalent surface is live on golfcare.co.uk
-    and insure4sport.co.uk; insure4boats.co.uk returns 404.
-  humanURL: https://www.cycleplan.co.uk/umbraco/swagger/index.html
-  baseURL: https://www.cycleplan.co.uk/umbraco/delivery/api/v2
-  tags:
-  - Content
-  - Media
-  - CMS
-  - Umbraco
-  - Cycleplan
-  properties:
-  - type: OpenAPI
-    url: openapi/ripe-insurance-cycleplan-content-delivery-openapi.json
   - type: APIReference
     url: https://www.cycleplan.co.uk/umbraco/swagger/index.html
+  - type: LLMsTxt
+    url: llms/ripe-insurance-cycleplan-llms.txt
+- aid: ripe-insurance:ripe-insurance-media-api
+  name: Ripe Insurance Media API
+  description: The Media API from Ripe Insurance — 8 operation(s) for media.
+  humanURL: https://www.ripeinsurance.co.uk/umbraco/swagger/index.html
+  baseURL: https://www.ripeinsurance.co.uk/umbraco/delivery/api/v2
+  tags:
+  - Media
+  properties:
+  - type: OpenAPI
+    url: openapi/ripe-insurance-media-api-openapi.yml
+  - type: APIReference
+    url: https://www.ripeinsurance.co.uk/umbraco/swagger/index.html
   - type: Documentation
     url: https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api
-  - type: Overlay
-    url: overlays/ripe-insurance-cycleplan-content-delivery-overlay.yaml
+  - type: ToolCrosswalk
+    url: mcp/ripe-insurance-tool-crosswalk.yml
+  - type: DataModel
+    url: data-model/ripe-insurance-data-model.yml
+  - type: ErrorCatalog
+    url: errors/ripe-insurance-problem-types.yml
+  - type: APIReference
+    url: https://www.cycleplan.co.uk/umbraco/swagger/index.html
   - type: LLMsTxt
     url: llms/ripe-insurance-cycleplan-llms.txt
 common:
+- type: Overlay
+  url: overlays/ripe-insurance-umbraco-content-delivery-overlay.yaml
+- type: Overlay
+  url: overlays/ripe-insurance-cycleplan-content-delivery-overlay.yaml
 - type: AgenticAccess
   url: agentic-access/ripe-insurance-agentic-access.yml
 - type: DomainSecurity
