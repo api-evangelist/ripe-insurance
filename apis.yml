@@ -22,6 +22,18 @@ description: Ripe Insurance Services Limited, trading as Ripe and part of Ripe T
   content and media, incidental infrastructure rather than an insurance product API. Its
   April 2026 Cycleplan ChatGPT app delivers real-time cycling quotes conversationally,
   but is a first-party consumer channel with no published API, MCP server, or spec.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - Insurance
