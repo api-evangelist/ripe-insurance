@@ -1,0 +1,836 @@
+openapi: 3.2.0
+info:
+  title: Ripe Insurance Media API
+  version: Latest
+  description: 'Operations tagged Media across 2 of this provider''s published API definitions: ripe-insurance-cycleplan-content-delivery-openapi.json, ripe-insurance-umbraco-content-delivery-openapi.json. Each path carries the servers of the definition it was published in.'
+tags:
+- name: Media
+paths:
+  /umbraco/delivery/api/v1/media:
+    get:
+      tags:
+      - Media
+      operationId: GetMedia
+      parameters:
+      - name: fetch
+        in: query
+        description: Specifies the media items to fetch. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this.
+        schema:
+          type: string
+        examples:
+          Select all children at root level:
+            value: children:/
+          Select all children of a media item by id:
+            value: children:id
+          Select all children of a media item by path:
+            value: children:path
+      - name: filter
+        in: query
+        description: Defines how to filter the fetched media items. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this.
+        schema:
+          type: array
+          items:
+            type: string
+        examples:
+          Default filter:
+            value: ''
+          Filter by media type:
+            value:
+            - mediaType:alias1
+          Filter by name:
+            value:
+            - name:nodeName
+      - name: sort
+        in: query
+        description: Defines how to sort the found media items. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this.
+        schema:
+          type: array
+          items:
+            type: string
+        examples:
+          Default sort:
+            value: ''
+          Sort by create date:
+            value:
+            - createDate:asc
+            - createDate:desc
+          Sort by name:
+            value:
+            - name:asc
+            - name:desc
+          Sort by sort order:
+            value:
+            - sortOrder:asc
+            - sortOrder:desc
+          Sort by update date:
+            value:
+            - updateDate:asc
+            - updateDate:desc
+      - name: skip
+        in: query
+        description: Specifies the number of found media items to skip. Use this to control pagination of the response.
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      - name: take
+        in: query
+        description: Specifies the number of found media items to take. Use this to control pagination of the response.
+        schema:
+          type: integer
+          format: int32
+          default: 10
+      - name: expand
+        in: query
+        description: Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this.
+        schema:
+          type: string
+        examples:
+          Expand none:
+            value: ''
+          Expand all:
+            value: all
+          Expand specific property:
+            value: property:alias1
+          Expand specific properties:
+            value: property:alias1,alias2
+      - name: Api-Key
+        in: header
+        description: API key specified through configuration to authorize access to the API.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PagedIApiMediaWithCropsResponseModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      deprecated: true
+  /umbraco/delivery/api/v2/media:
+    get:
+      tags:
+      - Media
+      operationId: GetMedia2.0
+      parameters:
+      - name: fetch
+        in: query
+        description: Specifies the media items to fetch. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this.
+        schema:
+          type: string
+        examples:
+          Select all children at root level:
+            value: children:/
+          Select all children of a media item by id:
+            value: children:id
+          Select all children of a media item by path:
+            value: children:path
+      - name: filter
+        in: query
+        description: Defines how to filter the fetched media items. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this.
+        schema:
+          type: array
+          items:
+            type: string
+        examples:
+          Default filter:
+            value: ''
+          Filter by media type:
+            value:
+            - mediaType:alias1
+          Filter by name:
+            value:
+            - name:nodeName
+      - name: sort
+        in: query
+        description: Defines how to sort the found media items. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this.
+        schema:
+          type: array
+          items:
+            type: string
+        examples:
+          Default sort:
+            value: ''
+          Sort by create date:
+            value:
+            - createDate:asc
+            - createDate:desc
+          Sort by name:
+            value:
+            - name:asc
+            - name:desc
+          Sort by sort order:
+            value:
+            - sortOrder:asc
+            - sortOrder:desc
+          Sort by update date:
+            value:
+            - updateDate:asc
+            - updateDate:desc
+      - name: skip
+        in: query
+        description: Specifies the number of found media items to skip. Use this to control pagination of the response.
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      - name: take
+        in: query
+        description: Specifies the number of found media items to take. Use this to control pagination of the response.
+        schema:
+          type: integer
+          format: int32
+          default: 10
+      - name: expand
+        in: query
+        description: Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this.
+        schema:
+          type: string
+        examples:
+          Expand none:
+            value: ''
+          Expand all properties:
+            value: properties[$all]
+          Expand specific property:
+            value: properties[alias1]
+          Expand specific properties:
+            value: properties[alias1,alias2]
+          Expand nested properties:
+            value: properties[alias1[properties[nestedAlias1,nestedAlias2]]]
+      - name: fields
+        in: query
+        description: Explicitly defines which properties should be included in the response (by default all properties are included). Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this.
+        schema:
+          type: string
+        examples:
+          Include all properties:
+            value: properties[$all]
+          Include only specific property:
+            value: properties[alias1]
+          Include only specific properties:
+            value: properties[alias1,alias2]
+          Include only specific nested properties:
+            value: properties[alias1[properties[nestedAlias1,nestedAlias2]]]
+      - name: Api-Key
+        in: header
+        description: API key specified through configuration to authorize access to the API.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PagedIApiMediaWithCropsResponseModel'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  /umbraco/delivery/api/v1/media/item:
+    get:
+      tags:
+      - Media
+      operationId: GetMediaItem
+      parameters:
+      - name: id
+        in: query
+        schema:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+            format: uuid
+      - name: expand
+        in: query
+        description: Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this.
+        schema:
+          type: string
+        examples:
+          Expand none:
+            value: ''
+          Expand all:
+            value: all
+          Expand specific property:
+            value: property:alias1
+          Expand specific properties:
+            value: property:alias1,alias2
+      - name: Api-Key
+        in: header
+        description: API key specified through configuration to authorize access to the API.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/IApiMediaWithCropsResponseModel'
+      deprecated: true
+  /umbraco/delivery/api/v1/media/item/{path}:
+    get:
+      tags:
+      - Media
+      operationId: GetMediaItemByPath
+      parameters:
+      - name: path
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: expand
+        in: query
+        description: Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this.
+        schema:
+          type: string
+        examples:
+          Expand none:
+            value: ''
+          Expand all:
+            value: all
+          Expand specific property:
+            value: property:alias1
+          Expand specific properties:
+            value: property:alias1,alias2
+      - name: Api-Key
+        in: header
+        description: API key specified through configuration to authorize access to the API.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IApiMediaWithCropsResponseModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      deprecated: true
+  /umbraco/delivery/api/v2/media/item/{path}:
+    get:
+      tags:
+      - Media
+      operationId: GetMediaItemByPath2.0
+      parameters:
+      - name: path
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: expand
+        in: query
+        description: Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this.
+        schema:
+          type: string
+        examples:
+          Expand none:
+            value: ''
+          Expand all properties:
+            value: properties[$all]
+          Expand specific property:
+            value: properties[alias1]
+          Expand specific properties:
+            value: properties[alias1,alias2]
+          Expand nested properties:
+            value: properties[alias1[properties[nestedAlias1,nestedAlias2]]]
+      - name: fields
+        in: query
+        description: Explicitly defines which properties should be included in the response (by default all properties are included). Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this.
+        schema:
+          type: string
+        examples:
+          Include all properties:
+            value: properties[$all]
+          Include only specific property:
+            value: properties[alias1]
+          Include only specific properties:
+            value: properties[alias1,alias2]
+          Include only specific nested properties:
+            value: properties[alias1[properties[nestedAlias1,nestedAlias2]]]
+      - name: Api-Key
+        in: header
+        description: API key specified through configuration to authorize access to the API.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IApiMediaWithCropsResponseModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  /umbraco/delivery/api/v1/media/item/{id}:
+    get:
+      tags:
+      - Media
+      operationId: GetMediaItemById
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: expand
+        in: query
+        description: Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this.
+        schema:
+          type: string
+        examples:
+          Expand none:
+            value: ''
+          Expand all:
+            value: all
+          Expand specific property:
+            value: property:alias1
+          Expand specific properties:
+            value: property:alias1,alias2
+      - name: Api-Key
+        in: header
+        description: API key specified through configuration to authorize access to the API.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IApiMediaWithCropsResponseModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+      deprecated: true
+  /umbraco/delivery/api/v2/media/item/{id}:
+    get:
+      tags:
+      - Media
+      operationId: GetMediaItemById2.0
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: expand
+        in: query
+        description: Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this.
+        schema:
+          type: string
+        examples:
+          Expand none:
+            value: ''
+          Expand all properties:
+            value: properties[$all]
+          Expand specific property:
+            value: properties[alias1]
+          Expand specific properties:
+            value: properties[alias1,alias2]
+          Expand nested properties:
+            value: properties[alias1[properties[nestedAlias1,nestedAlias2]]]
+      - name: fields
+        in: query
+        description: Explicitly defines which properties should be included in the response (by default all properties are included). Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this.
+        schema:
+          type: string
+        examples:
+          Include all properties:
+            value: properties[$all]
+          Include only specific property:
+            value: properties[alias1]
+          Include only specific properties:
+            value: properties[alias1,alias2]
+          Include only specific nested properties:
+            value: properties[alias1[properties[nestedAlias1,nestedAlias2]]]
+      - name: Api-Key
+        in: header
+        description: API key specified through configuration to authorize access to the API.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IApiMediaWithCropsResponseModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  /umbraco/delivery/api/v2/media/items:
+    get:
+      tags:
+      - Media
+      operationId: GetMediaItems2.0
+      parameters:
+      - name: id
+        in: query
+        schema:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+            format: uuid
+      - name: expand
+        in: query
+        description: Defines the properties that should be expanded in the response. Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this.
+        schema:
+          type: string
+        examples:
+          Expand none:
+            value: ''
+          Expand all properties:
+            value: properties[$all]
+          Expand specific property:
+            value: properties[alias1]
+          Expand specific properties:
+            value: properties[alias1,alias2]
+          Expand nested properties:
+            value: properties[alias1[properties[nestedAlias1,nestedAlias2]]]
+      - name: fields
+        in: query
+        description: Explicitly defines which properties should be included in the response (by default all properties are included). Refer to [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api/media-delivery-api#query-parameters) for more details on this.
+        schema:
+          type: string
+        examples:
+          Include all properties:
+            value: properties[$all]
+          Include only specific property:
+            value: properties[alias1]
+          Include only specific properties:
+            value: properties[alias1,alias2]
+          Include only specific nested properties:
+            value: properties[alias1[properties[nestedAlias1,nestedAlias2]]]
+      - name: Api-Key
+        in: header
+        description: API key specified through configuration to authorize access to the API.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/IApiMediaWithCropsResponseModel'
+components:
+  schemas:
+    ImageCropModel:
+      type: object
+      properties:
+        alias:
+          type:
+          - string
+          - 'null'
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        coordinates:
+          $ref: '#/components/schemas/ImageCropCoordinatesModel'
+      additionalProperties: false
+    ImageFocalPointModel:
+      type: object
+      properties:
+        left:
+          type: number
+          format: double
+        top:
+          type: number
+          format: double
+      additionalProperties: false
+    ImageCropCoordinatesModel:
+      type: object
+      properties:
+        x1:
+          type: number
+          format: double
+        y1:
+          type: number
+          format: double
+        x2:
+          type: number
+          format: double
+        y2:
+          type: number
+          format: double
+      additionalProperties: false
+    IApiMediaWithCropsResponseModel:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        mediaType:
+          type: string
+          readOnly: true
+        url:
+          type: string
+          readOnly: true
+        extension:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        width:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          readOnly: true
+        height:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          readOnly: true
+        bytes:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          readOnly: true
+        properties:
+          type: object
+          additionalProperties: {}
+          readOnly: true
+        focalPoint:
+          $ref: '#/components/schemas/ImageFocalPointModel'
+        crops:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ImageCropModel'
+          readOnly: true
+        path:
+          type: string
+          readOnly: true
+        createDate:
+          type: string
+          format: date-time
+          readOnly: true
+        updateDate:
+          type: string
+          format: date-time
+          readOnly: true
+      additionalProperties: false
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    PagedIApiMediaWithCropsResponseModel:
+      required:
+      - items
+      - total
+      type: object
+      properties:
+        total:
+          type: integer
+          format: int64
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/IApiMediaWithCropsResponseModel'
+      additionalProperties: false
+    ImageCropModel_2:
+      required:
+      - height
+      - width
+      type: object
+      properties:
+        alias:
+          type:
+          - string
+          - 'null'
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        coordinates:
+          oneOf:
+          - $ref: '#/components/schemas/ImageCropCoordinatesModel_2'
+      additionalProperties: false
+    ImageFocalPointModel_2:
+      required:
+      - left
+      - top
+      type: object
+      properties:
+        left:
+          type: number
+          format: double
+        top:
+          type: number
+          format: double
+      additionalProperties: false
+    ImageCropCoordinatesModel_2:
+      required:
+      - x1
+      - x2
+      - y1
+      - y2
+      type: object
+      properties:
+        x1:
+          type: number
+          format: double
+        y1:
+          type: number
+          format: double
+        x2:
+          type: number
+          format: double
+        y2:
+          type: number
+          format: double
+      additionalProperties: false
+    ApiMediaWithCropsResponseModel:
+      required:
+      - createDate
+      - id
+      - mediaType
+      - name
+      - path
+      - properties
+      - updateDate
+      - url
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        mediaType:
+          type: string
+          readOnly: true
+        url:
+          type: string
+          readOnly: true
+        extension:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        width:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          readOnly: true
+        height:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          readOnly: true
+        bytes:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          readOnly: true
+        properties:
+          type: object
+          additionalProperties: {}
+          readOnly: true
+        focalPoint:
+          oneOf:
+          - $ref: '#/components/schemas/ImageFocalPointModel_2'
+        crops:
+          type:
+          - array
+          - 'null'
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/ImageCropModel_2'
+        path:
+          type: string
+        createDate:
+          type: string
+          format: date-time
+        updateDate:
+          type: string
+          format: date-time
+      additionalProperties: false
+    PagedIApiMediaWithCropsResponseModel_2:
+      required:
+      - items
+      - total
+      type: object
+      properties:
+        total:
+          type: integer
+          format: int64
+        items:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/ApiMediaWithCropsResponseModel'
+      additionalProperties: false
+x-refined-from:
+- ripe-insurance-cycleplan-content-delivery-openapi.json
+- ripe-insurance-umbraco-content-delivery-openapi.json
