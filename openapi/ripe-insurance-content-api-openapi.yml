@@ -1,8 +1,8 @@
 openapi: 3.2.0
 info:
-  title: Ripe Insurance Content API
+  title: Umbraco Delivery Content API
+  description: You can find out more about the Umbraco Delivery API in the documentation.
   version: Latest
-  description: 'Operations tagged Content across 2 of this provider''s published API definitions: ripe-insurance-cycleplan-content-delivery-openapi.json, ripe-insurance-umbraco-content-delivery-openapi.json. Each path carries the servers of the definition it was published in.'
 tags:
 - name: Content
 paths:
@@ -157,6 +157,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
       deprecated: true
+      summary: Get content
+      x-summary-source: derived
   /umbraco/delivery/api/v2/content:
     get:
       tags:
@@ -323,6 +325,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+      summary: Get content2 0
+      x-summary-source: derived
   /umbraco/delivery/api/v1/content/item:
     get:
       tags:
@@ -398,6 +402,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
       deprecated: true
+      summary: Get content item
+      x-summary-source: derived
   /umbraco/delivery/api/v1/content/item/{path}:
     get:
       tags:
@@ -475,6 +481,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
       deprecated: true
+      summary: Get content item by path
+      x-summary-source: derived
   /umbraco/delivery/api/v2/content/item/{path}:
     get:
       tags:
@@ -567,6 +575,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+      summary: Get content item by path2 0
+      x-summary-source: derived
   /umbraco/delivery/api/v1/content/item/{id}:
     get:
       tags:
@@ -644,6 +654,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
       deprecated: true
+      summary: Get content item by id
+      x-summary-source: derived
   /umbraco/delivery/api/v2/content/item/{id}:
     get:
       tags:
@@ -736,6 +748,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+      summary: Get content item by id2 0
+      x-summary-source: derived
   /umbraco/delivery/api/v2/content/items:
     get:
       tags:
@@ -826,70 +840,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+      summary: Get content items2 0
+      x-summary-source: derived
 components:
   schemas:
-    IApiContentResponseModel:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        contentType:
-          type: string
-          readOnly: true
-        properties:
-          type: object
-          additionalProperties: {}
-          readOnly: true
-        name:
-          type:
-          - string
-          - 'null'
-          readOnly: true
-        createDate:
-          type: string
-          format: date-time
-          readOnly: true
-        updateDate:
-          type: string
-          format: date-time
-          readOnly: true
-        route:
-          $ref: '#/components/schemas/IApiContentRouteModel'
-        cultures:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/IApiContentRouteModel'
-          readOnly: true
-      additionalProperties: false
-    PagedIApiContentResponseModel:
-      required:
-      - items
-      - total
-      type: object
-      properties:
-        total:
-          type: integer
-          format: int64
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/IApiContentResponseModel'
-      additionalProperties: false
-    IApiContentRouteModel:
-      type: object
-      properties:
-        path:
-          type: string
-          readOnly: true
-        queryString:
-          type:
-          - string
-          - 'null'
-        startItem:
-          $ref: '#/components/schemas/IApiContentStartItemModel'
-      additionalProperties: false
     IApiContentStartItemModel:
       type: object
       properties:
@@ -926,60 +880,7 @@ components:
           - string
           - 'null'
       additionalProperties: {}
-    ApiContentRouteModel:
-      required:
-      - path
-      - startItem
-      type: object
-      properties:
-        path:
-          type: string
-        queryString:
-          type:
-          - string
-          - 'null'
-        startItem:
-          oneOf:
-          - $ref: '#/components/schemas/ApiContentStartItemModel'
-      additionalProperties: false
-    ApiContentResponseModel:
-      required:
-      - contentType
-      - createDate
-      - cultures
-      - id
-      - name
-      - properties
-      - route
-      - updateDate
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        contentType:
-          type: string
-        properties:
-          type: object
-          additionalProperties: {}
-        name:
-          type: string
-        createDate:
-          type: string
-          format: date-time
-        updateDate:
-          type: string
-          format: date-time
-        route:
-          oneOf:
-          - $ref: '#/components/schemas/ApiContentRouteModel'
-        cultures:
-          type: object
-          additionalProperties:
-            oneOf:
-            - $ref: '#/components/schemas/ApiContentRouteModel'
-      additionalProperties: false
-    PagedIApiContentResponseModel_2:
+    PagedIApiContentResponseModel:
       required:
       - items
       - total
@@ -991,21 +892,53 @@ components:
         items:
           type: array
           items:
-            oneOf:
-            - $ref: '#/components/schemas/ApiContentResponseModel'
+            $ref: '#/components/schemas/IApiContentResponseModel'
       additionalProperties: false
-    ApiContentStartItemModel:
-      required:
-      - id
-      - path
+    IApiContentResponseModel:
       type: object
       properties:
         id:
           type: string
           format: uuid
+          readOnly: true
+        contentType:
+          type: string
+          readOnly: true
+        properties:
+          type: object
+          additionalProperties: {}
+          readOnly: true
+        name:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        createDate:
+          type: string
+          format: date-time
+          readOnly: true
+        updateDate:
+          type: string
+          format: date-time
+          readOnly: true
+        route:
+          $ref: '#/components/schemas/IApiContentRouteModel'
+        cultures:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/IApiContentRouteModel'
+          readOnly: true
+      additionalProperties: false
+    IApiContentRouteModel:
+      type: object
+      properties:
         path:
           type: string
+          readOnly: true
+        queryString:
+          type:
+          - string
+          - 'null'
+        startItem:
+          $ref: '#/components/schemas/IApiContentStartItemModel'
       additionalProperties: false
-x-refined-from:
-- ripe-insurance-cycleplan-content-delivery-openapi.json
-- ripe-insurance-umbraco-content-delivery-openapi.json

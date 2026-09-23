@@ -1,0 +1,26 @@
+{
+  "provider": "ripe-insurance",
+  "sources": [
+    "_original/ripe-insurance-cycleplan-content-delivery-openapi.json"
+  ],
+  "outputs": [
+    "ripe-insurance-content-api-openapi.yml",
+    "ripe-insurance-media-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "1 archived document(s) dropped as subsets of other archived documents",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "ripe-insurance-cycleplan-content-delivery-openapi.json: upgraded openapi 3.0.1 -> OpenAPI 3.2.0",
+    "ripe-insurance-cycleplan-content-delivery-openapi.json: declared missing tag: Content",
+    "ripe-insurance-cycleplan-content-delivery-openapi.json: declared missing tag: Media",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "_original/ripe-insurance-umbraco-content-delivery-openapi.json: archived document superseded by a larger archived document",
+    "ripe-insurance-content-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ripe-insurance-media-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
+}

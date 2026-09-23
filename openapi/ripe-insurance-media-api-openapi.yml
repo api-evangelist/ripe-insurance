@@ -1,8 +1,8 @@
 openapi: 3.2.0
 info:
-  title: Ripe Insurance Media API
+  title: Umbraco Delivery Media API
+  description: You can find out more about the Umbraco Delivery API in the documentation.
   version: Latest
-  description: 'Operations tagged Media across 2 of this provider''s published API definitions: ripe-insurance-cycleplan-content-delivery-openapi.json, ripe-insurance-umbraco-content-delivery-openapi.json. Each path carries the servers of the definition it was published in.'
 tags:
 - name: Media
 paths:
@@ -113,6 +113,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
       deprecated: true
+      summary: Get media
+      x-summary-source: derived
   /umbraco/delivery/api/v2/media:
     get:
       tags:
@@ -235,6 +237,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+      summary: Get media2 0
+      x-summary-source: derived
   /umbraco/delivery/api/v1/media/item:
     get:
       tags:
@@ -278,6 +282,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/IApiMediaWithCropsResponseModel'
       deprecated: true
+      summary: Get media item
+      x-summary-source: derived
   /umbraco/delivery/api/v1/media/item/{path}:
     get:
       tags:
@@ -322,6 +328,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
       deprecated: true
+      summary: Get media item by path
+      x-summary-source: derived
   /umbraco/delivery/api/v2/media/item/{path}:
     get:
       tags:
@@ -381,6 +389,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+      summary: Get media item by path2 0
+      x-summary-source: derived
   /umbraco/delivery/api/v1/media/item/{id}:
     get:
       tags:
@@ -426,6 +436,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
       deprecated: true
+      summary: Get media item by id
+      x-summary-source: derived
   /umbraco/delivery/api/v2/media/item/{id}:
     get:
       tags:
@@ -486,6 +498,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+      summary: Get media item by id2 0
+      x-summary-source: derived
   /umbraco/delivery/api/v2/media/items:
     get:
       tags:
@@ -544,6 +558,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/IApiMediaWithCropsResponseModel'
+      summary: Get media items2 0
+      x-summary-source: derived
 components:
   schemas:
     ImageCropModel:
@@ -562,31 +578,44 @@ components:
         coordinates:
           $ref: '#/components/schemas/ImageCropCoordinatesModel'
       additionalProperties: false
-    ImageFocalPointModel:
+    ProblemDetails:
       type: object
       properties:
-        left:
-          type: number
-          format: double
-        top:
-          type: number
-          format: double
-      additionalProperties: false
-    ImageCropCoordinatesModel:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    PagedIApiMediaWithCropsResponseModel:
+      required:
+      - items
+      - total
       type: object
       properties:
-        x1:
-          type: number
-          format: double
-        y1:
-          type: number
-          format: double
-        x2:
-          type: number
-          format: double
-        y2:
-          type: number
-          format: double
+        total:
+          type: integer
+          format: int64
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/IApiMediaWithCropsResponseModel'
       additionalProperties: false
     IApiMediaWithCropsResponseModel:
       type: object
@@ -652,84 +681,7 @@ components:
           format: date-time
           readOnly: true
       additionalProperties: false
-    ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
-    PagedIApiMediaWithCropsResponseModel:
-      required:
-      - items
-      - total
-      type: object
-      properties:
-        total:
-          type: integer
-          format: int64
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/IApiMediaWithCropsResponseModel'
-      additionalProperties: false
-    ImageCropModel_2:
-      required:
-      - height
-      - width
-      type: object
-      properties:
-        alias:
-          type:
-          - string
-          - 'null'
-        width:
-          type: integer
-          format: int32
-        height:
-          type: integer
-          format: int32
-        coordinates:
-          oneOf:
-          - $ref: '#/components/schemas/ImageCropCoordinatesModel_2'
-      additionalProperties: false
-    ImageFocalPointModel_2:
-      required:
-      - left
-      - top
-      type: object
-      properties:
-        left:
-          type: number
-          format: double
-        top:
-          type: number
-          format: double
-      additionalProperties: false
-    ImageCropCoordinatesModel_2:
-      required:
-      - x1
-      - x2
-      - y1
-      - y2
+    ImageCropCoordinatesModel:
       type: object
       properties:
         x1:
@@ -745,92 +697,13 @@ components:
           type: number
           format: double
       additionalProperties: false
-    ApiMediaWithCropsResponseModel:
-      required:
-      - createDate
-      - id
-      - mediaType
-      - name
-      - path
-      - properties
-      - updateDate
-      - url
+    ImageFocalPointModel:
       type: object
       properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        name:
-          type: string
-          readOnly: true
-        mediaType:
-          type: string
-          readOnly: true
-        url:
-          type: string
-          readOnly: true
-        extension:
-          type:
-          - string
-          - 'null'
-          readOnly: true
-        width:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          readOnly: true
-        height:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          readOnly: true
-        bytes:
-          type:
-          - integer
-          - 'null'
-          format: int32
-          readOnly: true
-        properties:
-          type: object
-          additionalProperties: {}
-          readOnly: true
-        focalPoint:
-          oneOf:
-          - $ref: '#/components/schemas/ImageFocalPointModel_2'
-        crops:
-          type:
-          - array
-          - 'null'
-          items:
-            oneOf:
-            - $ref: '#/components/schemas/ImageCropModel_2'
-        path:
-          type: string
-        createDate:
-          type: string
-          format: date-time
-        updateDate:
-          type: string
-          format: date-time
+        left:
+          type: number
+          format: double
+        top:
+          type: number
+          format: double
       additionalProperties: false
-    PagedIApiMediaWithCropsResponseModel_2:
-      required:
-      - items
-      - total
-      type: object
-      properties:
-        total:
-          type: integer
-          format: int64
-        items:
-          type: array
-          items:
-            oneOf:
-            - $ref: '#/components/schemas/ApiMediaWithCropsResponseModel'
-      additionalProperties: false
-x-refined-from:
-- ripe-insurance-cycleplan-content-delivery-openapi.json
-- ripe-insurance-umbraco-content-delivery-openapi.json
