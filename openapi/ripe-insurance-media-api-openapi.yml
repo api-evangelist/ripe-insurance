@@ -578,45 +578,6 @@ components:
         coordinates:
           $ref: '#/components/schemas/ImageCropCoordinatesModel'
       additionalProperties: false
-    ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
-    PagedIApiMediaWithCropsResponseModel:
-      required:
-      - items
-      - total
-      type: object
-      properties:
-        total:
-          type: integer
-          format: int64
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/IApiMediaWithCropsResponseModel'
-      additionalProperties: false
     IApiMediaWithCropsResponseModel:
       type: object
       properties:
@@ -681,6 +642,55 @@ components:
           format: date-time
           readOnly: true
       additionalProperties: false
+    PagedIApiMediaWithCropsResponseModel:
+      required:
+      - items
+      - total
+      type: object
+      properties:
+        total:
+          type: integer
+          format: int64
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/IApiMediaWithCropsResponseModel'
+      additionalProperties: false
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    ImageFocalPointModel:
+      type: object
+      properties:
+        left:
+          type: number
+          format: double
+        top:
+          type: number
+          format: double
+      additionalProperties: false
     ImageCropCoordinatesModel:
       type: object
       properties:
@@ -694,16 +704,6 @@ components:
           type: number
           format: double
         y2:
-          type: number
-          format: double
-      additionalProperties: false
-    ImageFocalPointModel:
-      type: object
-      properties:
-        left:
-          type: number
-          format: double
-        top:
           type: number
           format: double
       additionalProperties: false
