@@ -858,6 +858,19 @@ components:
           items:
             $ref: '#/components/schemas/IApiContentResponseModel'
       additionalProperties: false
+    IApiContentRouteModel:
+      type: object
+      properties:
+        path:
+          type: string
+          readOnly: true
+        queryString:
+          type:
+          - string
+          - 'null'
+        startItem:
+          $ref: '#/components/schemas/IApiContentStartItemModel'
+      additionalProperties: false
     IApiContentStartItemModel:
       type: object
       properties:
@@ -869,6 +882,31 @@ components:
           type: string
           readOnly: true
       additionalProperties: false
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
     IApiContentResponseModel:
       type: object
       properties:
@@ -904,41 +942,3 @@ components:
             $ref: '#/components/schemas/IApiContentRouteModel'
           readOnly: true
       additionalProperties: false
-    IApiContentRouteModel:
-      type: object
-      properties:
-        path:
-          type: string
-          readOnly: true
-        queryString:
-          type:
-          - string
-          - 'null'
-        startItem:
-          $ref: '#/components/schemas/IApiContentStartItemModel'
-      additionalProperties: false
-    ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
