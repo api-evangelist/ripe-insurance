@@ -59,7 +59,7 @@ tags:
 - Small Business Insurance
 - Underwriting
 - Direct to Consumer
-- Brokers
+- Brokerage
 tags_raw:
 - Insurance
 - United Kingdom
@@ -71,6 +71,7 @@ tags_raw:
 - Underwriting
 - Direct to Consumer
 - Broker
+- Brokers
 created: '2026-07-25'
 modified: '2026-07-25'
 specificationVersion: '0.23'
