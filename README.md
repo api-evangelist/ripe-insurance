@@ -1,4 +1,4 @@
-# Ripe Insurance (ripe-insurance)
+# Ripe Insurance
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,74 +64,124 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Ripe Insurance Services Limited, trading as Ripe and part of Ripe Thinking Limited, is a Stockport-based United Kingdom digital Managing General Agent and specialist insurance intermediary authorised and regulated by the Financial Conduct Authority (FRN 313411). Founded in 1997 and majority-backed by Aquiline Capital Partners, Ripe underwrites and distributes niche personal and small-commercial lines direct to consumers through its own brands — Cycleplan, Golf Care, Insure4Boats, Insure4Sport and Ripe Caravans — covering caravans and motorhomes, park homes and holiday homes, photography and music equipment, valuables, shooting, golf, cycling, boats, over 400 sports, personal trainers, hair and beauty businesses, clubs and leisure organisations, and small business. It reports more than 400,000 policyholders.
+Ripe Insurance Services Limited, trading as Ripe and part of Ripe Thinking Limited, is a Stockport-based United Kingdom digital Managing General Agent and specialist insurance intermediary authorised and regulated by the Financial Conduct Authority (FRN 313411). Founded in 1997 and majority-backed by Aquiline Capital Partners, Ripe underwrites and distributes niche personal and small-commercial lines direct to consumers through its own brands — Cycleplan, Golf Care, Insure4Boats, Insure4Sport and Ripe Caravans — covering caravans and motorhomes, park homes and holiday homes, photography and music equipment, valuables, shooting, golf, cycling, boats, over 400 sports, personal trainers, hair and beauty businesses, clubs and leisure organisations, and small business. It reports more than 400,000 policyholders. Ripe's API posture is honestly assessed as partner-gated with no public developer surface — there is no developer portal, no self-serve API programme, no published quote, bind, issue or FNOL API, and no ACORD reference anywhere on its estate. Its in-house platform is marketed as flexible and fast to integrate, but partnering is a business-development contact form on ripethinking.co.uk rather than a technical onboarding path. The only anonymously reachable, machine-readable API surface across the Ripe brand estate is the Umbraco CMS Content Delivery API that ships with its .NET content management system — read-only content and media, incidental infrastructure rather than an insurance product API. Its April 2026 Cycleplan ChatGPT app delivers real-time cycling quotes conversationally, but is a first-party consumer channel with no published API, MCP server, or spec.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/ripe-insurance/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/ripe-insurance/refs/heads/main/apis.yml)
+**Areas:** Insurance · United Kingdom · Insurtech · Managing General Agent · Specialist Insurance · Personal Lines · Small Business Insurance · Underwriting · Direct to Consumer · Brokerage
 
-## Tags
+## Ripe Insurance on APIs.io
 
-- Insurance
-- United Kingdom
-- Insurtech
-- Managing General Agent
-- Specialist Insurance
-- Personal Lines
-- Small Business Insurance
-- Underwriting
-- Direct to Consumer
-- Broker
+Everything profiled for Ripe Insurance is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/ripe-insurance/](https://apis.io/providers/ripe-insurance/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (2)
 
-- **Created:** 2026-07-25
-- **Modified:** 2026-07-25
+- [Ripe Insurance Content API](https://apis.io/apis/ripe-insurance/ripe-insurance-content-api/) — The Content API from Ripe Insurance — 8 operation(s) for content.
+- [Ripe Insurance Media API](https://apis.io/apis/ripe-insurance/ripe-insurance-media-api/) — The Media API from Ripe Insurance — 8 operation(s) for media.
 
-## API Posture
+### Published properties
 
-Ripe publishes **no developer portal and no insurance API**. This is the honest finding, and it is the expected one for a UK direct-to-consumer digital MGA in a market with no open-insurance mandate.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- `developer.`, `developers.`, `docs.` and `api.` subdomains do not resolve. `/developers`, `/developer`, `/partners` and `/integrations` all return 404.
-- The only integration path is commercial: the corporate [Partner with Us](https://www.ripethinking.co.uk/partner-with-us/) page is a business-development enquiry form with no specification, sandbox, or onboarding. Recorded as **gated**.
-- **None** of quote, bind, issue, or FNOL is exposed as an API. Quoting and binding happen inside first-party consumer web funnels and, since 28 April 2026, the Cycleplan ChatGPT app — a real-time conversational quote that clicks through to payment, built in-house, with no published API, MCP server, or spec.
-- **ACORD posture: no ACORD reference found.** Zero hits for ACORD, AL3, ACORD XML, NGDS, IVANS, Vertafore or Applied Epic across the consumer and corporate sites. Consistent with a D2C MGA that owns its distribution end to end and never touches agency-download rails.
-- No webhooks, no AsyncAPI, no public Postman collection, no GraphQL, no gRPC.
+#### MCP servers (1)
 
-## APIs
+Model Context Protocol servers that expose the API to agents.
 
-### Ripe Insurance Umbraco Content Delivery API
+- [ripe-insurance-content](https://apis.io/servers/ripe-insurance/ripe-insurance-content/)
 
-The read-only Umbraco CMS Content Delivery API served anonymously from the Ripe Insurance marketing and quote site. This is platform infrastructure that ships with Umbraco, **not an insurance product API** — eight GET operations over website content and media, with no quote, bind, issue, policy, billing, or FNOL capability. Confirmed live and parsing as OpenAPI 3.0.4 on 2026-07-25, with an equivalent surface on cycleplan.co.uk, golfcare.co.uk and insure4sport.co.uk. Ripe neither documents nor promotes it, and `robots.txt` carries `Disallow: /umbraco/`. It is recorded because it is real and publicly reachable, not because it constitutes an insurance API.
+#### Agentic access (1)
 
-- **Human URL:** [https://www.ripeinsurance.co.uk/umbraco/swagger/index.html](https://www.ripeinsurance.co.uk/umbraco/swagger/index.html)
-- **Base URL:** `https://www.ripeinsurance.co.uk/umbraco/delivery/api/v2`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Ripe Insurance Agentic Access](https://apis.io/agentic-access/ripe-insurance/ripe-insurance-agentic-access/)
 
-- Content
-- Media
-- CMS
-- Umbraco
+#### Collections (2)
 
-#### Properties
+Postman and Open Collection request collections.
 
-- [OpenAPI](openapi/ripe-insurance-umbraco-content-delivery-openapi.json) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [API Reference](https://www.ripeinsurance.co.uk/umbraco/swagger/index.html)
-- [Documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api)
+- [Umbraco Delivery API](https://apis.io/collections/ripe-insurance/open-ripe-insurance-cycleplan-content-delivery/)
+- [Umbraco Delivery API](https://apis.io/collections/ripe-insurance/open-ripe-insurance-umbraco-content-delivery/)
 
-## Authentication
+#### Overlays (2)
 
-The only OAuth surface is Umbraco member authentication (OpenIddict) fronting the website customer login, discoverable at [`/.well-known/openid-configuration`](https://www.ripeinsurance.co.uk/.well-known/openid-configuration): `authorization_code`, `refresh_token` and `client_credentials` grants, `openid` and `offline_access` scopes, PKCE S256, RS256 id tokens. It is not a partner or developer authorization server, and no public client registration is offered. The harvested Content Delivery API requires no authentication at all.
+OpenAPI overlays, including conversational phrasing for each operation.
 
-## Links
+- [Ripe Insurance Cycleplan Content Delivery Overlay](https://apis.io/overlays/ripe-insurance/ripe-insurance-cycleplan-content-delivery-overlay/)
+- [Ripe Insurance Umbraco Content Delivery Overlay](https://apis.io/overlays/ripe-insurance/ripe-insurance-umbraco-content-delivery-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Ripe Insurance Authentication](https://apis.io/security/ripe-insurance/ripe-insurance-authentication/)
+- [Ripe Insurance Domain Security](https://apis.io/security/ripe-insurance/ripe-insurance-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Ripe Insurance Scopes](https://apis.io/scopes/ripe-insurance/ripe-insurance-scopes/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.ripeinsurance.co.uk/)
-- [Corporate site — Ripe Thinking](https://www.ripethinking.co.uk/)
-- [Partner with Us](https://www.ripethinking.co.uk/partner-with-us/)
-- [Technology](https://www.ripethinking.co.uk/technology/)
-- [How to claim](https://www.ripeinsurance.co.uk/how-to-claim/)
-- [News](https://www.ripethinking.co.uk/news/)
-- [LinkedIn](https://uk.linkedin.com/company/ripe-insurance)
+- [Support](https://www.ripeinsurance.co.uk/help-and-support/)
+- [Blog](https://www.ripeinsurance.co.uk/motorhome-insurance/blog/)
+- [Terms of service](https://www.ripeinsurance.co.uk/terms-of-use/)
+- [Privacy policy](https://www.ripeinsurance.co.uk/privacy-policy/)
+- [GitHub](https://github.com/RipeThinking)
 
-## Review
+## API Evangelist rating
 
-See [review.yml](review.yml) for the full reviewer finding, every probed URL with its HTTP status, spec provenance, ACORD scan, and auth model.
+**Kin Score 40.0** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 74.1 |
+| Contract quality | 39.2 |
+| Contract governance | 4.5 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 37.5 |
+| Access clarity | 57.1 |
+
+**Agent readiness 42.4** — agent-native
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | na |
+| Error Semantics | verified |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | partial |
+| Operation Distinctiveness | — |
+
+**Regulatory alignment 36.8** — Insurance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/ripe-insurance/](https://apis.io/providers/ripe-insurance/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Ripe Insurance: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/ripe-insurance/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
